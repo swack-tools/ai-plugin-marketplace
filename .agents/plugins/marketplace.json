@@ -1,0 +1,47 @@
+{
+  "name": "swack-tools-community",
+  "interface": {
+    "displayName": "Swack Tools Community"
+  },
+  "plugins": [
+    {
+      "name": "vale",
+      "source": {
+        "source": "git",
+        "url": "https://github.com/swack-tools/vale-ai-plugin.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "trakt-mcp",
+      "source": {
+        "source": "git",
+        "url": "https://github.com/swack-tools/trakt-ai-plugin.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    },
+    {
+      "name": "token-max",
+      "source": {
+        "source": "git",
+        "url": "https://github.com/swack-tools/token-max-ai-plugin.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

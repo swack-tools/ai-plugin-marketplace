@@ -1,0 +1,30 @@
+# Local environment and credentials
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.wrangler/
+.wrangler-state/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Dependencies and generated output
+node_modules/
+_site/
+_site_cache/
+dist/
+build/
+coverage/
+*.log
+.firecrawl/
