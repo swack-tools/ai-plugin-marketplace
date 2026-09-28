@@ -11,8 +11,10 @@
     {
       "name": "token-max",
       "source": {
-        "source": "github",
-        "repo": "swack-tools/token-max-ai-plugin"
+        "source": "git-subdir",
+        "url": "https://github.com/swack-tools/token-max-ai-plugin.git",
+        "path": "plugins/token-max",
+        "ref": "main"
       },
       "description": "Run an in-app, report-only token audit for Codex and Claude.",
       "category": "productivity"
