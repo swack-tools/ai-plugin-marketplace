@@ -12,8 +12,7 @@
       "name": "vale",
       "source": {
         "source": "github",
-        "repo": "swack-tools/vale-ai-plugin",
-        "ref": "main"
+        "repo": "swack-tools/vale-ai-plugin"
       },
       "description": "Check prose with Vale hooks, commands, and skills.",
       "category": "productivity"
@@ -22,8 +21,7 @@
       "name": "trakt-mcp",
       "source": {
         "source": "github",
-        "repo": "swack-tools/trakt-ai-plugin",
-        "ref": "main"
+        "repo": "swack-tools/trakt-ai-plugin"
       },
       "description": "Connect your Trakt account for discovery, calendars, viewing profiles, lists, and library management.",
       "category": "productivity"
@@ -32,8 +30,7 @@
       "name": "token-max",
       "source": {
         "source": "github",
-        "repo": "swack-tools/token-max-ai-plugin",
-        "ref": "main"
+        "repo": "swack-tools/token-max-ai-plugin"
       },
       "description": "Run an in-app, report-only token audit for Codex and Claude.",
       "category": "productivity"
