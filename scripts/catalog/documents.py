@@ -148,6 +148,17 @@ def recent_changes(snapshot,candidates,limit=3):
 
 def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catalog/examples.json')):
     metadata=load_upstream_info(snapshot,capabilities)
+    edits=json.loads(Path('catalog/prose-edits.json').read_text()).get(config.id,[])
+    if metadata:
+        # Only prose fields are editable; native inventory and source selectors stay authoritative.
+        prose_items=[*metadata.get('examples',[]), *metadata.get('platforms',{}).values(),
+                     *metadata.get('mcpServers',{}).values(), *metadata.get('hooks',[])]
+        for item in prose_items:
+            for field in ('title','expected_behavior','notes','description'):
+                if field in item:
+                    item[field]=apply_prose_edits(item[field],snapshot,'catalog-info.json',edits)
+            if 'prerequisites' in item:
+                item['prerequisites']=[apply_prose_edits(text,snapshot,'catalog-info.json',edits) for text in item['prerequisites']]
     overview_selector=(metadata or {}).get('overview') or config.documents['overview']
     overview=[select_document(snapshot,overview_selector)]
     for block in overview: block['links']=source_links(snapshot,block)
@@ -202,7 +213,6 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
         if cap.kind in ('hook','mcp_server') and cap.examples:
             cap.description=cap.examples[0]['expected_behavior']
     apply_component_notes(snapshot,metadata or {},capabilities)
-    edits=json.loads(Path('catalog/prose-edits.json').read_text()).get(config.id,[])
     for block in overview:
         block['text']=apply_prose_edits(block['text'],snapshot,block['source']['path'],edits)
     for cap in capabilities:

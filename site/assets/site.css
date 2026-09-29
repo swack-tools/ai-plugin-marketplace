@@ -6,3 +6,6 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.button:hover{transform:none}}
 
 .navigation:not([open])>summary{display:block}
+
+.invocation-heading{margin-top:32px}.stats span{display:block;line-height:1.5}
+@media(max-width:760px){.stats{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px 0}.stats div:nth-child(4){border-left:0;padding-left:0}.stats span{font-size:.73rem}}
