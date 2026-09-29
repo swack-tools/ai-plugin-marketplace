@@ -3,7 +3,7 @@
   "token-max": [
     {
       "path": "site/index.html",
-      "sha256": "b19ab2fe68a9e6ac3acc5aa6f400435d50e243aad2f160686e4b0db4909430ba",
+      "sha256": "0bfd1b2d78b2f71aee4b5fc4fe10e255b7f5949584ac291b42e480279636b128",
       "before": "added overhead and the limits",
       "after": "added overhead, and the limits"
     }

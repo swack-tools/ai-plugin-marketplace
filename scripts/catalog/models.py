@@ -85,6 +85,8 @@ class VerifiedRelease:
     url: str
     published_at: str
     assets: dict
+    release_id: int | None = None
+    checksum_asset: dict = field(default_factory=dict)
 
 
 @dataclass
@@ -105,6 +107,7 @@ class PluginRecord:
     changes: list
     release: VerifiedRelease | None
     diagnostics: list = field(default_factory=list)
+    pending_releases: list = field(default_factory=list)
 
 
 def serialize_catalog(value) -> bytes:

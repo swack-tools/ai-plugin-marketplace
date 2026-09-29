@@ -15,14 +15,14 @@ class RenderTests(unittest.TestCase):
 
     def test_render_rejects_active_html_and_unsafe_links(self):
         from scripts.catalog.render import render_content
-        block={'format':'html','text':'<script>alert(1)</script><p onclick="evil()">Hello <a href="javascript:evil()">bad</a><a href="README.md">read</a></p>','source':{'repo':'swack-tools/vale-ai-plugin','commit':'a'*40,'path':'docs/index.html'}}
+        block={'format':'html','text':'<script>alert(1)</script><p onclick="evil()">Hello <a href="javascript:evil()">bad</a><a href="README.md">read</a></p>','source':{'repo':'swack-tools/vale-ai-plugin','commit':'a'*40,'path':'docs/index.html'},'links':{'README.md':'https://github.com/swack-tools/vale-ai-plugin/blob/'+('a'*40)+'/docs/README.md'}}
         html=render_content(block)
         self.assertNotIn('script',html);self.assertNotIn('onclick',html);self.assertNotIn('javascript:',html)
         self.assertIn('/blob/'+('a'*40)+'/docs/README.md',html)
 
     def test_imported_branch_links_use_the_source_commit(self):
         from scripts.catalog.render import render_content
-        block={'format':'markdown','text':'[Guide](https://github.com/swack-tools/vale-ai-plugin/blob/main/docs/usage.md)','source':{'repo':'swack-tools/vale-ai-plugin','commit':'a'*40,'path':'README.md'}}
+        block={'format':'markdown','text':'[Guide](https://github.com/swack-tools/vale-ai-plugin/blob/main/docs/usage.md)','source':{'repo':'swack-tools/vale-ai-plugin','commit':'a'*40,'path':'README.md'},'links':{'https://github.com/swack-tools/vale-ai-plugin/blob/main/docs/usage.md':'https://github.com/swack-tools/vale-ai-plugin/blob/'+('a'*40)+'/docs/usage.md'}}
         html=render_content(block)
         self.assertIn('/blob/'+('a'*40)+'/docs/usage.md',html)
         self.assertNotIn('/blob/main/',html)
@@ -38,3 +38,12 @@ class RenderTests(unittest.TestCase):
         html=render_content(block)
         self.assertNotIn('private.txt',html)
         self.assertIn('source',html.lower())
+
+    def test_imported_website_routes_resolve_to_existing_sources(self):
+        from scripts.catalog.documents import source_links
+        from scripts.catalog.models import SourceSnapshot
+        snapshot=SourceSnapshot('vale','swack-tools/vale-ai-plugin','a'*40,'2026-01-01',{'docs/index.md':b'Overview','docs/installation.md':b'Install'})
+        links=source_links(snapshot,{'source':{'path':'docs/index.md'},'format':'markdown','text':'[Install](installation.html)'})
+        self.assertTrue(links['installation.html'].endswith('/docs/installation.md'))
+        with self.assertRaisesRegex(CatalogError,'Linked source missing'):
+            source_links(snapshot,{'source':{'path':'docs/index.md'},'format':'markdown','text':'[Missing](missing.html)'})

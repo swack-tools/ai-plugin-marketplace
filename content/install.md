@@ -24,7 +24,7 @@ Install only the plugins you want. Start a new session after installing. For a p
 Add the marketplace from a terminal:
 
 ```sh
-codex plugin marketplace add https://github.com/swack-tools/ai-plugin-marketplace.git --sparse .agents/plugins
+codex plugin marketplace add https://github.com/swack-tools/ai-plugin-marketplace.git
 ```
 
 Then install from the Codex app's **Plugins** screen, or use the command-line tool:

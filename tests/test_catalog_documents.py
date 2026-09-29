@@ -53,3 +53,13 @@ class DocumentTests(unittest.TestCase):
         self.assertEqual(recent_changes(s,[]),[])
         result=recent_changes(s,[{'draft':False,'prerelease':False,'tag_name':'v1.0.0','body':'New feature','html_url':'https://github.com/swack-tools/vale-ai-plugin/releases/tag/v1.0.0','published_at':'2026-01-01'}])
         self.assertEqual(result[0]['text'],'New feature')
+
+    def test_metadata_descriptions_require_source_evidence(self):
+        from scripts.catalog.documents import apply_component_notes
+        s=snapshot({'README.md':'# Overview\n\nChecks writing.'})
+        cap=Capability('mcp_server:vale','mcp_server','vale',None,[],['claude'])
+        note={'description':'Check writing.','sources':[{'path':'README.md','format':'markdown','mode':'lead'}]}
+        apply_component_notes(s,{'mcpServers':{'vale':note}},[cap])
+        self.assertEqual(cap.description,'Check writing.')
+        self.assertEqual(cap.sources[0].path,'README.md')
+        with self.assertRaises(CatalogError):apply_component_notes(s,{'mcpServers':{'vale':{'description':'Unsupported claim'}}},[cap])

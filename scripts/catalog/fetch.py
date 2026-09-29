@@ -1,5 +1,6 @@
 """Bounded GitHub reads. Collected repository code is never executed."""
 import io
+import hashlib
 import json
 import os
 from pathlib import Path
@@ -119,7 +120,24 @@ def collect_snapshot(config, cache: Path, client: GitHubClient):
 
 def write_source_lock(snapshots, releases, path):
     path.parent.mkdir(parents=True,exist_ok=True)
-    path.write_bytes(serialize_catalog({'sources': [{'id':s.project_id,'repo':s.repo,'commit':s.commit,'date':s.commit_date,'release':releases[s.project_id]} for s in snapshots]}))
+    fields=('id','tag_name','draft','prerelease','published_at','body','html_url')
+    asset_fields=('id','name','size','updated_at','browser_download_url')
+    sources=[]
+    for snapshot in snapshots:
+        candidates=[{**{k:r.get(k) for k in fields},'assets':[{k:a[k] for k in asset_fields} for a in r['assets']]} for r in snapshot.release_candidates]
+        sources.append({'id':snapshot.project_id,'repo':snapshot.repo,'commit':snapshot.commit,'date':snapshot.commit_date,'files':{p:hashlib.sha256(data).hexdigest() for p,data in snapshot.files.items()},'release_candidates':candidates,'release':releases[snapshot.project_id]})
+    path.write_bytes(serialize_catalog({'schema_version':1,'sources':sources}))
+
+
+def load_locked_snapshot(config,entry,client):
+    from .models import SourceRef
+    if entry['id']!=config.id or entry['repo']!=config.repo: raise CatalogError('Locked repository mismatch')
+    SourceRef(config.repo,entry['commit'],'README.md')
+    data=client.get(f'https://api.github.com/repos/{config.repo}/zipball/{entry["commit"]}')
+    files=archive_files(data,strip_root=True)
+    if {p:hashlib.sha256(data).hexdigest() for p,data in files.items()}!=entry['files']:
+        raise CatalogError('Locked source digest mismatch')
+    return SourceSnapshot(config.id,config.repo,entry['commit'],entry['date'],files,entry['release_candidates'])
 
 
 def load_snapshot(config,directory):

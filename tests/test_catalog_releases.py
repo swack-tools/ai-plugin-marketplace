@@ -48,3 +48,9 @@ class ReleaseTests(unittest.TestCase):
         records=[release('v3',['c.zip']),release('v2',[*assets.values(),'other.txt']),release('v1',list(assets.values()))]
         self.assertEqual([r['tag_name'] for r in complete_releases(records,assets)], ['v2','v1'])
         self.assertEqual(complete_releases([],assets),[])
+
+    def test_newer_incomplete_releases_are_pending(self):
+        from scripts.catalog.releases import pending_releases
+        assets={'claude':'c.zip','codex':'x.zip','checksums':'SHA256SUMS'}
+        records=[dict(tag_name='v2.0.0',assets=[{'name':'c.zip'}],published_at='2026-02-01',draft=False,prerelease=False,html_url='https://example.com/v2'),dict(tag_name='v1.0.0',assets=[{'name':n} for n in assets.values()],published_at='2026-01-01',draft=False,prerelease=False,html_url='https://example.com/v1')]
+        self.assertEqual(pending_releases(records,assets),[{'tag':'v2.0.0','url':'https://example.com/v2','missing':['SHA256SUMS','x.zip']}])

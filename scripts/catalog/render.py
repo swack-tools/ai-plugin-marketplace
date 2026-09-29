@@ -37,18 +37,16 @@ def render_content(block,context=None):
     ref=block.get('source')
     for a in soup.select('a[href]'):
         href=a['href'];parts=urlsplit(href)
+        if href in block.get('links',{}):
+            a['href']=block['links'][href];continue
         if ref and href.startswith(f'https://github.com/{ref["repo"]}/blob/'):
-            pieces=parts.path.split('/',5)
-            if len(pieces)==6:
-                a['href']=source_url({**ref,'path':pieces[5]});continue
+            raise CatalogError('Imported source link was not validated')
         if parts.scheme:
             if parts.scheme not in ('https','http') or parts.username or parts.password: a.unwrap()
             continue
         if href.startswith('//') or '\\' in href: a.unwrap();continue
         if ref:
-            path=posixpath.normpath(posixpath.join(posixpath.dirname(ref['path']),parts.path)) if parts.path else ref['path']
-            if path.startswith('../') or path.startswith('/'): a.unwrap();continue
-            a['href']=source_url({**ref,'path':path})
+            raise CatalogError('Imported source link was not validated')
         elif block.get('release_url'):
             a['href']=urljoin(block['release_url'],href)
         else: a.unwrap()

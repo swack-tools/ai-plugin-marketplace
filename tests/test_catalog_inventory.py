@@ -43,3 +43,16 @@ class InventoryTests(unittest.TestCase):
         s=sample({'plugins/vale/.claude-plugin/plugin.json':'{"name":"vale"}','plugins/vale/hooks/hooks.json':json.dumps({'hooks':{'Stop':[{'hooks':[{'type':'command','command':'echo a'},{'type':'command','command':'echo b'}]}]}})})
         counts=capability_counts(inventory_plugin(self.config,s)[0])
         self.assertEqual((counts['hook_actions'],counts['hook_events']),(2,1))
+
+    def test_different_client_hook_handlers_are_rejected(self):
+        from scripts.catalog.inventory import inventory_plugin
+        files={'plugins/vale/.claude-plugin/plugin.json':json.dumps({'name':'vale','hooks':{'hooks':{'Stop':[{'hooks':[{'type':'command','command':'echo first'}]}]}}}), 'plugins/vale/plugin.json':json.dumps({'name':'vale','extensions':{'com.openai':{'hooks':{'hooks':{'Stop':[{'hooks':[{'type':'command','command':'echo second'}]}]}}}}})}
+        with self.assertRaisesRegex(CatalogError,'Conflicting hook handlers'):
+            inventory_plugin(self.config,sample(files))
+
+    def test_explicit_empty_component_targets_are_rejected(self):
+        from scripts.catalog.inventory import inventory_plugin
+        for path in ['./README.md','./extra']:
+            files={'plugins/vale/.claude-plugin/plugin.json':json.dumps({'name':'vale','skills':path}), 'plugins/vale/README.md':'Not a skill', 'plugins/vale/extra/README.md':'No definitions'}
+            with self.assertRaisesRegex(CatalogError,'No supported skills'):
+                inventory_plugin(self.config,sample(files))

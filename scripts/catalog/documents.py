@@ -4,6 +4,8 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import posixpath
+from urllib.parse import urlsplit, unquote
 from bs4 import BeautifulSoup
 from markdown_it import MarkdownIt
 from .inventory import manifests, capability_counts
@@ -49,7 +51,29 @@ def select_document(snapshot,selector):
         text='\n'.join(lines[start:end]).strip()
     else: raise CatalogError('Unsupported document format')
     if not text: raise CatalogError(f'{snapshot.project_id}: empty selected content: {path}')
-    return {'text':text,'format':format,'source':asdict(source)}
+    block={'text':text,'format':format,'source':asdict(source)}
+    return block
+
+
+def source_links(snapshot,block):
+    """Resolve imported links against the actual immutable source tree."""
+    html=MarkdownIt('commonmark',{'html':False}).render(block['text']) if block['format']=='markdown' else block['text']
+    links={}
+    for anchor in BeautifulSoup(html,'html.parser').select('a[href]'):
+        href=anchor['href']; parts=urlsplit(href)
+        if href.startswith(f'https://github.com/{snapshot.repo}/blob/'):
+            path=unquote(parts.path.split('/',5)[-1])
+        elif parts.scheme or href.startswith('//') or '\\' in href:
+            continue
+        else:
+            path=posixpath.normpath(posixpath.join(posixpath.dirname(block['source']['path']),unquote(parts.path))) if parts.path else block['source']['path']
+        # Vale's documentation builder maps Markdown files to these HTML routes.
+        if path not in snapshot.files and snapshot.project_id=='vale' and path.startswith('docs/') and path.endswith('.html'):
+            path=path[:-5]+'.md'
+        if path not in snapshot.files:
+            raise CatalogError(f'{snapshot.project_id}: Linked source missing: {path}')
+        links[href]=snapshot.source(path).url
+    return links
 
 
 def normalize_example(value):
@@ -81,6 +105,22 @@ def load_upstream_info(snapshot,capabilities):
     return value
 
 
+def apply_component_notes(snapshot,metadata,capabilities):
+    for cap in capabilities:
+        note=None
+        if cap.kind=='mcp_server': note=metadata.get('mcpServers',{}).get(cap.name)
+        if cap.kind=='hook':
+            note=next((n for n in metadata.get('hooks',[]) if any(n['target']['path']==source.path and n['target']['pointer']==source.locator for source in cap.sources)),None)
+        if not note: continue
+        if not isinstance(note,dict) or not isinstance(note.get('description'),str) or not note.get('sources'):
+            raise CatalogError('Component descriptions require source evidence')
+        for selector in note['sources']:
+            select_document(snapshot,selector)
+            source=snapshot.source(selector['path'])
+            if source not in cap.sources: cap.sources.append(source)
+        cap.description=note['description']
+
+
 def validate_example_coverage(capabilities):
     errors=[]
     for cap in capabilities:
@@ -110,6 +150,7 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
     metadata=load_upstream_info(snapshot,capabilities)
     overview_selector=(metadata or {}).get('overview') or config.documents['overview']
     overview=[select_document(snapshot,overview_selector)]
+    for block in overview: block['links']=source_links(snapshot,block)
     usage=[]
     if metadata and metadata.get('platforms'):
         for name,value in metadata['platforms'].items():
@@ -160,11 +201,16 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
     for cap in capabilities:
         if cap.kind in ('hook','mcp_server') and cap.examples:
             cap.description=cap.examples[0]['expected_behavior']
+    apply_component_notes(snapshot,metadata or {},capabilities)
     edits=json.loads(Path('catalog/prose-edits.json').read_text()).get(config.id,[])
     for block in overview:
         block['text']=apply_prose_edits(block['text'],snapshot,block['source']['path'],edits)
     for cap in capabilities:
         if cap.description:
             cap.description=apply_prose_edits(cap.description,snapshot,cap.sources[0].path,edits)
+    changelog=(metadata or {}).get('changelog')
+    changes=[{'title':'Upstream changelog',**select_document(snapshot,changelog)}] if changelog else recent_changes(snapshot,snapshot.release_candidates)
+    for block in changes:
+        if 'source' in block: block['links']=source_links(snapshot,block)
     source_manifest=next(iter(manifests(config,snapshot).values()))[1]
-    return PluginRecord(config.id,config.name,source_manifest.get('description',''),source_manifest.get('version','Unversioned'),snapshot.commit,config.homepage,config.repo,config.accent,capabilities,capability_counts(capabilities),overview,examples,usage,recent_changes(snapshot,snapshot.release_candidates),release,[])
+    return PluginRecord(config.id,config.name,source_manifest.get('description',''),source_manifest.get('version','Unversioned'),snapshot.commit,config.homepage,config.repo,config.accent,capabilities,capability_counts(capabilities),overview,examples,usage,changes,release,[])

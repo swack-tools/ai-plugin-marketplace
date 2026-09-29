@@ -62,6 +62,9 @@ def parse_manifest_paths(snapshot,config):
                 if not any(p==path or p.startswith(path+'/') for p in snapshot.files):
                     if optional: continue
                     raise CatalogError(f'Missing declared component: {path}')
+                if kind in ('skills','commands') and not optional:
+                    matches=[p for p in snapshot.files if (p==path or p.startswith(path+'/')) and (p.endswith('/SKILL.md') if kind=='skills' else p.endswith('.md'))]
+                    if not matches: raise CatalogError(f'No supported {kind} in declared target: {path}')
                 if (path,None) not in selected: selected.append((path,None))
             paths[kind]=selected
         result[client]=paths
@@ -78,7 +81,7 @@ def frontmatter(data,path):
 
 
 def inventory_plugin(config,snapshot):
-    found={}; diagnostics=[]
+    found={}; diagnostics=[]; hook_identities={}
     def add(cap,key=None):
         key=key or cap.id
         if key in found:
@@ -117,6 +120,10 @@ def inventory_plugin(config,snapshot):
                         # Never expose shell commands; link to the reviewed definition instead.
                         details={'event':event,'matcher':group.get('matcher','All tools'),'type':action.get('type'),'timeout_seconds':action.get('timeout'),'pointer':pointer}
                         id=f'hook:{event}:{i}:{j}'
+                        identity=json.dumps({'action':action,'group':{k:v for k,v in group.items() if k!='hooks'}},sort_keys=True)
+                        if id in hook_identities and hook_identities[id]!=identity:
+                            raise CatalogError(f'Conflicting hook handlers: {id}')
+                        hook_identities[id]=identity
                         add(Capability(id,'hook',event,None,[snapshot.source(path,pointer)],[client],details))
         servers={}
         for path,inline in paths['mcpServers']:

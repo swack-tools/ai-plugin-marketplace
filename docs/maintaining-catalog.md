@@ -27,7 +27,20 @@ Public GitHub requests can use `GH_TOKEN` or `GITHUB_TOKEN` from the environment
 Never write tokens into source files. CI uses its read-only built-in token.
 Live builds download and verify both client archives for the newest complete
 stable release. An incomplete release does not replace an older complete pair.
-No complete release means no download buttons for that plugin.
+No complete release means no download buttons for that plugin. Newer incomplete
+releases appear as pending while the last complete pair stays available.
+
+To repeat a build from its provenance artifact, use the same marketplace commit
+and dependencies, then run:
+
+```sh
+python scripts/build_site.py --locked build/sources.lock.json --output build/replay
+```
+
+This mode fetches the recorded commits, checks every source digest, and verifies
+the recorded releases again. It fails if an asset or tag changed. Release notes
+come from the lock. It does not select newer upstream content. Fixture builds
+use `--offline` and require no network access.
 
 ## Maintain sources and examples
 

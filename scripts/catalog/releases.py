@@ -34,6 +34,12 @@ def complete_releases(records, names):
     return sorted(result,key=lambda r:r['published_at'],reverse=True)
 
 
+def pending_releases(records,names):
+    complete=complete_releases(records,names)
+    cutoff=complete[0]['published_at'] if complete else ''
+    return [{'tag':r['tag_name'],'url':r['html_url'],'missing':sorted(set(names.values())-{a['name'] for a in r['assets']})} for r in sorted(records,key=lambda r:r['published_at'] or '',reverse=True) if not r['draft'] and not r['prerelease'] and r['published_at']>cutoff and r not in complete]
+
+
 def select_release(config, records, client):
     candidates=complete_releases(records,config.release_assets)
     if not candidates: return None
@@ -53,7 +59,8 @@ def select_release(config, records, client):
             raise CatalogError('Unexpected release asset URL')
         return client.get(url)
     checksums={}
-    for line in download(config.release_assets['checksums']).decode().splitlines():
+    checksum_data=download(config.release_assets['checksums'])
+    for line in checksum_data.decode().splitlines():
         match=re.fullmatch(r'([0-9a-fA-F]{64})\s+\*?([^/\\]+)',line)
         if not match or match[2] in checksums: raise CatalogError('Invalid checksum manifest')
         checksums[match[2]]=match[1].lower()
@@ -68,4 +75,6 @@ def select_release(config, records, client):
     identity=lambda r: sorted((a['id'],a['name'],a['size'],a['updated_at']) for a in r['assets'])
     if current.get('draft') or current.get('prerelease') or current['tag_name']!=tag or identity(current)!=identity(release) or tag_commit()!=commit:
         raise CatalogError('Release changed during verification')
-    return VerifiedRelease(tag,commit,release['html_url'],release['published_at'],verified)
+    checksum_asset={k:assets[config.release_assets['checksums']][k] for k in ('id','name','size','updated_at','browser_download_url')}
+    checksum_asset['sha256']=hashlib.sha256(checksum_data).hexdigest()
+    return VerifiedRelease(tag,commit,release['html_url'],release['published_at'],verified,release['id'],checksum_asset)
