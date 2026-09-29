@@ -15,5 +15,5 @@
 {% macro invocation(project,c,client) %}
 {% set selected = namespace(example=c.examples[0], matched=false) %}
 {% for e in c.examples %}{% if not selected.matched and e.platform.startswith(client) %}{% set selected.example=e %}{% set selected.matched=true %}{% endif %}{% endfor %}
-<div class="example"><div class="example-head"><span class="eyebrow">{{ c.name }}</span><button class="copy" type="button" hidden>Copy</button></div><pre><code>{{ '/' ~ project.id ~ ':' ~ c.name if client == 'claude' else '$' ~ c.name }} {{ selected.example.input_or_trigger | invocation_request }}</code></pre><p>{{ c.description }}</p><a class="source-link" href="#{{ c.id | replace(':','-') }}">See examples and prerequisites ↗</a>{% for s in c.sources %}<a class="source-link" href="{{ source_url(s) }}">View SKILL.md ↗</a>{% endfor %}</div>
+<div class="example"><div class="example-head"><span class="eyebrow">{{ c.name }}</span><button class="copy" type="button" hidden>Copy</button></div><pre><code>{{ selected.example.input_or_trigger | invocation_prompt(project.id,c.name,client) }}</code></pre><p>{{ c.description }}</p><a class="source-link" href="#{{ c.id | replace(':','-') }}">See examples and prerequisites ↗</a>{% for s in c.sources %}<a class="source-link" href="{{ source_url(s) }}">View SKILL.md ↗</a>{% endfor %}</div>
 {% endmacro %}
