@@ -12,6 +12,7 @@
 *.pfx
 
 # OS and editor files
+# macOS metadata files at the repository root or any nested directory
 .DS_Store
 Thumbs.db
 .idea/
