@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": [
+    "projects"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "projects": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "repo",
+          "ref",
+          "plugin_root",
+          "homepage",
+          "accent",
+          "documents",
+          "release_assets"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "repo": {
+            "type": "string"
+          },
+          "ref": {
+            "type": "string"
+          },
+          "plugin_root": {
+            "type": "string"
+          },
+          "homepage": {
+            "type": "string"
+          },
+          "accent": {
+            "type": "string"
+          },
+          "documents": {
+            "type": "object"
+          },
+          "release_assets": {
+            "type": "object",
+            "required": [
+              "claude",
+              "codex",
+              "checksums"
+            ],
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "tool_source": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

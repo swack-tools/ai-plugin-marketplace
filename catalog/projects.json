@@ -1,0 +1,93 @@
+{
+  "projects": [
+    {
+      "id": "vale",
+      "name": "Vale",
+      "repo": "swack-tools/vale-ai-plugin",
+      "ref": "main",
+      "plugin_root": "plugins/vale",
+      "homepage": "https://vale.swacktech.com/",
+      "accent": "#086b68",
+      "documents": {
+        "overview": {
+          "path": "docs/index.md",
+          "format": "markdown",
+          "mode": "lead"
+        },
+        "usage": {
+          "path": "docs/usage.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": [
+            "Commands, skills, and examples",
+            "Choose how to run Vale"
+          ]
+        }
+      },
+      "release_assets": {
+        "claude": "vale-claude.zip",
+        "codex": "vale-codex.zip",
+        "checksums": "SHA256SUMS"
+      }
+    },
+    {
+      "id": "trakt-mcp",
+      "name": "Trakt MCP",
+      "repo": "swack-tools/trakt-ai-plugin",
+      "ref": "main",
+      "plugin_root": "plugins/trakt-mcp",
+      "homepage": "https://trakt.swacktech.com/",
+      "accent": "#285d45",
+      "documents": {
+        "overview": {
+          "path": "docs/pages/index.html",
+          "format": "html",
+          "mode": "section",
+          "selector": "p.lead"
+        },
+        "usage": {
+          "path": "docs/pages/connect.html",
+          "format": "html",
+          "mode": "section",
+          "selector": "p.lead"
+        }
+      },
+      "release_assets": {
+        "claude": "trakt-mcp-claude.zip",
+        "codex": "trakt-mcp-codex.zip",
+        "checksums": "SHA256SUMS"
+      }
+    },
+    {
+      "id": "token-max",
+      "name": "Token Max",
+      "repo": "swack-tools/token-max-ai-plugin",
+      "ref": "main",
+      "plugin_root": "plugins/token-max",
+      "homepage": "https://token-max.swacktech.com/",
+      "accent": "#a63620",
+      "documents": {
+        "overview": {
+          "path": "site/index.html",
+          "format": "html",
+          "mode": "section",
+          "selector": "#overview"
+        },
+        "usage": {
+          "path": "README.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": [
+            "Token Max",
+            "Use"
+          ]
+        }
+      },
+      "release_assets": {
+        "claude": "token-max-claude.zip",
+        "codex": "token-max-codex.zip",
+        "checksums": "SHA256SUMS"
+      }
+    }
+  ]
+}
