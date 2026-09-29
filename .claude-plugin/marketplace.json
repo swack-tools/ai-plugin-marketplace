@@ -5,9 +5,31 @@
     "url": "https://github.com/swack-tools"
   },
   "metadata": {
-    "description": "Token Max plugin from Swack Tools."
+    "description": "Claude and Codex plugins from Swack Tools."
   },
   "plugins": [
+    {
+      "name": "vale",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/swack-tools/vale-ai-plugin.git",
+        "path": "plugins/vale",
+        "ref": "main"
+      },
+      "description": "Check prose with Vale hooks, commands, and skills.",
+      "category": "productivity"
+    },
+    {
+      "name": "trakt-mcp",
+      "source": {
+        "source": "git-subdir",
+        "url": "https://github.com/swack-tools/trakt-ai-plugin.git",
+        "path": "plugins/trakt-mcp",
+        "ref": "main"
+      },
+      "description": "Connect your Trakt account for discovery, calendars, viewing profiles, lists, and library management.",
+      "category": "productivity"
+    },
     {
       "name": "token-max",
       "source": {
