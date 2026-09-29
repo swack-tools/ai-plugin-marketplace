@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if project %}{{ project.name }} · {% endif %}Swack Tools plugins</title>
+<meta name="description" content="Explore practical plugins for Claude and Codex. Browse skills, examples, hooks, and verified downloads.">
+<meta name="color-scheme" content="light dark">
+<link rel="canonical" href="{{ domain }}{{ route }}">
+<link rel="icon" href="{{ url('assets/favicon.svg') }}" type="image/svg+xml">
+<link rel="stylesheet" href="{{ url('assets/site.css') }}">
+<script defer src="{{ url('assets/site.js') }}"></script>
+</head>
+<body{% if project %} class="theme-{{ project.id }}"{% endif %}>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead"><a class="brand" href="{{ url('index.html') }}"><span class="brand-mark" aria-hidden="true">s/</span> swack tools<span class="brand-label">plugins</span></a><a class="header-link" href="https://github.com/swack-tools/ai-plugin-marketplace">GitHub <span aria-hidden="true">↗</span></a></header>
+<div class="layout">
+<aside class="sidebar"><details class="navigation" open><summary>Explore the marketplace</summary><nav aria-label="Main navigation">
+<a href="{{ url('index.html') }}"{% if route == 'index.html' %} aria-current="page"{% endif %}>Overview</a>
+<a href="{{ url('install/index.html') }}"{% if route == 'install/index.html' %} aria-current="page"{% endif %}>Install</a>
+<p class="nav-label">The collection</p>
+{% for p in projects %}<a class="project-link" href="{{ url('plugins/' ~ p.id ~ '/index.html') }}"{% if project and project.id == p.id %} aria-current="page"{% endif %}><span class="dot dot-{{ p.id }}" aria-hidden="true"></span>{{ p.name }}</a>
+{% if project and project.id == p.id %}<div class="subnav">{% for id,label in [('overview','Overview'),('examples','Examples'),('skills','Skills'),('servers','Servers'),('tools','Tools'),('hooks','Hooks'),('commands','Commands'),('usage','Client usage'),('releases','Releases')] %}<a href="#{{ id }}">{{ label }}</a>{% endfor %}</div>{% endif %}
+{% endfor %}
+<div class="nav-footer"><a href="https://oxidexmore.slack.com/">Slack workspace ↗</a><span>Built in the open.<br>Made for your workflow.</span></div>
+</nav></details></aside>
+<main id="main" tabindex="-1">{% block main %}{% endblock %}
+<footer class="footer"><span>Swack Tools · Community plugins</span><a href="{{ url('install/index.html') }}">Installation guide</a><a href="https://github.com/swack-tools/ai-plugin-marketplace/blob/{{ catalog_commit | default('main') }}/docs/attribution.md">Source attribution</a></footer>
+</main></div>
+</body></html>

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "trakt-mcp",
+  "version": "2.0.0",
+  "description": "Explore Trakt movies, shows, calendars, and lists; manage your watchlist, history, ratings, and collection with explicit write permission.",
+  "author": {
+    "name": "SwackTech LLC",
+    "url": "https://github.com/swack-tools"
+  },
+  "homepage": "https://trakt.swacktech.com/",
+  "repository": "https://github.com/swack-tools/trakt-ai-plugin",
+  "license": "GPL-3.0-only",
+  "keywords": [
+    "trakt",
+    "movies",
+    "tv",
+    "watch-history",
+    "recommendations",
+    "watchlist",
+    "calendars",
+    "ratings",
+    "collection"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Trakt MCP \u2014 Community",
+        "shortDescription": "Discover and manage your Trakt viewing.",
+        "longDescription": "An independent community integration with seven guided workflows and nine MCP tools. Discover recommendations, viewing history, titles, lists, and release calendars. Inspect the documented API catalog and make requested list, history, rating, and collection changes with write permission. Restricted operations remain unavailable. Not endorsed by Trakt, Anthropic, or OpenAI.",
+        "developerName": "SwackTech LLC",
+        "category": "Productivity",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://trakt.swacktech.com/",
+        "privacyPolicyURL": "https://trakt.swacktech.com/privacy",
+        "defaultPrompt": [
+          "Find three movies from my Trakt recommendations.",
+          "Show my upcoming episodes for the next seven days.",
+          "Create a private list called Rainy Sunday and add Arrival (2016)."
+        ],
+        "brandColor": "#155E4B",
+        "composerIcon": "./assets/icon.png",
+        "logo": "./assets/logo.png"
+      }
+    }
+  }
+}

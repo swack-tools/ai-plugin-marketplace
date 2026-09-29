@@ -120,3 +120,12 @@ def collect_snapshot(config, cache: Path, client: GitHubClient):
 def write_source_lock(snapshots, releases, path):
     path.parent.mkdir(parents=True,exist_ok=True)
     path.write_bytes(serialize_catalog({'sources': [{'id':s.project_id,'repo':s.repo,'commit':s.commit,'date':s.commit_date,'release':releases[s.project_id]} for s in snapshots]}))
+
+
+def load_snapshot(config,directory):
+    base=Path(directory)/config.id
+    metadata=json.loads((base/'snapshot.json').read_text())
+    files={p.relative_to(base).as_posix():p.read_bytes() for p in base.rglob('*') if p.is_file() and not p.is_symlink() and p.name!='snapshot.json'}
+    from .models import SourceRef
+    SourceRef(config.repo,metadata['commit'],'README.md')
+    return SourceSnapshot(config.id,config.repo,metadata['commit'],metadata['commit_date'],files,metadata.get('release_candidates',[])),metadata.get('release')

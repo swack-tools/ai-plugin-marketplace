@@ -6,6 +6,15 @@ def snapshot(files):
     return SourceSnapshot('vale','swack-tools/vale-ai-plugin','a'*40,'2026-01-01',{k:v.encode() for k,v in files.items()})
 
 class DocumentTests(unittest.TestCase):
+    def test_reviewed_prose_edit_preserves_source_and_detects_drift(self):
+        from scripts.catalog.documents import apply_prose_edits
+        import hashlib
+        source=snapshot({'README.md':'Docs, tools and examples.'})
+        edits=[{'path':'README.md','sha256':hashlib.sha256(source.files['README.md']).hexdigest(),'before':'tools and examples','after':'tools, and examples'}]
+        self.assertEqual(apply_prose_edits('Docs, tools and examples.',source,'README.md',edits),'Docs, tools, and examples.')
+        source.files['README.md']=b'Changed source'
+        with self.assertRaises(CatalogError):apply_prose_edits('Docs, tools and examples.',source,'README.md',edits)
+
     def test_heading_selection_respects_hierarchy_and_fenced_code(self):
         from scripts.catalog.documents import select_document
         s=snapshot({'README.md':'# Project\n\nIntro\n\n## Use\n\nDo this.\n\n```sh\n# Not a heading\n```\n\n### Detail\nMore.\n\n## End\nStop.'})

@@ -10,6 +10,15 @@ from .inventory import manifests, capability_counts
 from .models import CatalogError, PluginRecord
 
 
+def apply_prose_edits(text,snapshot,path,edits):
+    for edit in edits:
+        if edit['path']!=path or edit['before'] not in text: continue
+        if hashlib.sha256(snapshot.files[path]).hexdigest()!=edit['sha256']:
+            raise CatalogError(f'{snapshot.project_id}: reviewed prose source changed: {path}')
+        text=text.replace(edit['before'],edit['after'])
+    return text
+
+
 def select_document(snapshot,selector):
     path=selector['path']; source=snapshot.source(path)
     text=snapshot.files[path].decode('utf-8')
@@ -151,5 +160,11 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
     for cap in capabilities:
         if cap.kind in ('hook','mcp_server') and cap.examples:
             cap.description=cap.examples[0]['expected_behavior']
+    edits=json.loads(Path('catalog/prose-edits.json').read_text()).get(config.id,[])
+    for block in overview:
+        block['text']=apply_prose_edits(block['text'],snapshot,block['source']['path'],edits)
+    for cap in capabilities:
+        if cap.description:
+            cap.description=apply_prose_edits(cap.description,snapshot,cap.sources[0].path,edits)
     source_manifest=next(iter(manifests(config,snapshot).values()))[1]
     return PluginRecord(config.id,config.name,source_manifest.get('description',''),source_manifest.get('version','Unversioned'),snapshot.commit,config.homepage,config.repo,config.accent,capabilities,capability_counts(capabilities),overview,examples,usage,recent_changes(snapshot,snapshot.release_candidates),release,[])

@@ -1,0 +1,152 @@
+{
+  "projects": [
+    {
+      "accent": "#086b68",
+      "capabilities": [],
+      "changes": [],
+      "counts": {
+        "hook_actions": 3,
+        "hook_events": 3,
+        "mcp_servers": 0,
+        "mcp_tools": 0,
+        "skills": 3,
+        "standalone_commands": 0
+      },
+      "diagnostics": [],
+      "examples": [
+        {
+          "evidence": "reviewed_illustration",
+          "expected_behavior": "Report file, line, rule, and correction for configured findings; leave the document unchanged.",
+          "id": "skill-check-prose",
+          "input_or_trigger": "Check `docs/setup.md` with Vale. Report findings without editing.",
+          "platform": "Supported Claude or Codex client",
+          "prerequisites": [
+            "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+          ],
+          "sources": [
+            {
+              "commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+              "locator": "",
+              "path": "plugins/vale/skills/check-prose/SKILL.md",
+              "repo": "swack-tools/vale-ai-plugin"
+            }
+          ],
+          "title": "Try this workflow"
+        }
+      ],
+      "homepage": "https://vale.swacktech.com/",
+      "id": "vale",
+      "name": "Vale",
+      "overview": [],
+      "release": null,
+      "repo": "swack-tools/vale-ai-plugin",
+      "source_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_version": "0.6.0",
+      "summary": "Google documentation style checks for Claude Code and Codex.",
+      "usage": []
+    },
+    {
+      "accent": "#285d45",
+      "capabilities": [],
+      "changes": [],
+      "counts": {
+        "hook_actions": 0,
+        "hook_events": 0,
+        "mcp_servers": 1,
+        "mcp_tools": 15,
+        "skills": 7,
+        "standalone_commands": 0
+      },
+      "diagnostics": [],
+      "examples": [
+        {
+          "evidence": "reviewed_illustration",
+          "expected_behavior": "Distinguish client OAuth 2.0 from upstream Trakt authorization. Start the documented reconnect flow after this request; expose only the user-facing activation information.",
+          "id": "skill-connection-help",
+          "input_or_trigger": "My Trakt tool returned `trakt_login_required`. Help me reconnect.",
+          "platform": "Supported Claude or Codex client",
+          "prerequisites": [
+            "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+          ],
+          "sources": [
+            {
+              "commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+              "locator": "",
+              "path": "plugins/trakt-mcp/skills/connection-help/SKILL.md",
+              "repo": "swack-tools/trakt-ai-plugin"
+            }
+          ],
+          "title": "Try this workflow"
+        }
+      ],
+      "homepage": "https://trakt.swacktech.com/",
+      "id": "trakt-mcp",
+      "name": "Trakt MCP",
+      "overview": [],
+      "release": null,
+      "repo": "swack-tools/trakt-ai-plugin",
+      "source_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_version": "2.0.0",
+      "summary": "Explore Trakt movies, shows, calendars, and lists; manage your watchlist, history, ratings, and collection with explicit write permission.",
+      "usage": []
+    },
+    {
+      "accent": "#a63620",
+      "capabilities": [],
+      "changes": [],
+      "counts": {
+        "hook_actions": 0,
+        "hook_events": 0,
+        "mcp_servers": 0,
+        "mcp_tools": 0,
+        "skills": 1,
+        "standalone_commands": 0
+      },
+      "diagnostics": [],
+      "examples": [
+        {
+          "evidence": "documented",
+          "expected_behavior": "Return an evidence-backed report in chat. Do not edit code or configuration, install tools, or apply proposed fixes. Report unavailable history and counters as unknown.",
+          "id": "token-audit-claude",
+          "input_or_trigger": "/token-max:token-audit Review this session and project.",
+          "platform": "claude-code",
+          "prerequisites": [
+            "Install Token Max in Claude and provide access to the session or project to review."
+          ],
+          "sources": [
+            {
+              "commit": "3d951ab08f2dd2a22b97514bde5b3f6bd1694603",
+              "locator": "",
+              "path": "README.md",
+              "repo": "swack-tools/token-max-ai-plugin"
+            },
+            {
+              "commit": "3d951ab08f2dd2a22b97514bde5b3f6bd1694603",
+              "locator": "",
+              "path": "plugins/token-max/skills/token-audit/SKILL.md",
+              "repo": "swack-tools/token-max-ai-plugin"
+            },
+            {
+              "commit": "3d951ab08f2dd2a22b97514bde5b3f6bd1694603",
+              "locator": "",
+              "path": "site/index.html",
+              "repo": "swack-tools/token-max-ai-plugin"
+            }
+          ],
+          "title": "Request a report-only audit in Claude"
+        }
+      ],
+      "homepage": "https://token-max.swacktech.com/",
+      "id": "token-max",
+      "name": "Token Max",
+      "overview": [],
+      "release": null,
+      "repo": "swack-tools/token-max-ai-plugin",
+      "source_commit": "3d951ab08f2dd2a22b97514bde5b3f6bd1694603",
+      "source_version": "0.4.0",
+      "summary": "In-app, report-only token audit for Codex and Claude",
+      "usage": []
+    }
+  ],
+  "schema_version": 1
+}
