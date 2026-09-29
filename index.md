@@ -6,7 +6,7 @@ Plugins from [swack-tools](https://github.com/swack-tools) for Claude and Codex.
 | --- | --- | --- |
 | **Vale** | Checks technical prose with Vale and Google style rules. | [Repository](https://github.com/swack-tools/vale-ai-plugin) · [Guide](https://vale.swacktech.com/) |
 | **Trakt MCP** | Connects your Trakt account for movie and TV discovery, watch history, calendars, lists, and requested library changes. | [Repository](https://github.com/swack-tools/trakt-ai-plugin) · [Guide](https://trakt.swacktech.com/) |
-| **Token Max** | Produces an in-chat, report-only token usage audit. | [Repository](https://github.com/swack-tools/token-max-ai-plugin) · [Guide](https://token-max.swacktech.com/) |
+| **Token Max** | Produces an in-chat, report-only token usage audit. | [Repository](https://github.com/swack-tools/token-max-ai-plugin) · [Guide](https://token-max.swacktech.com/) · [Claude ZIP](https://github.com/swack-tools/token-max-ai-plugin/releases/download/v1.0.0/token-max-claude.zip) · [Codex ZIP](https://github.com/swack-tools/token-max-ai-plugin/releases/download/v1.0.0/token-max-codex.zip) |
 
 These are community plugins installed from GitHub repositories. Review each repository and its permissions before installing. Trakt requires you to connect your own account.
 
@@ -49,9 +49,14 @@ codex plugin add token-max@swack-tools-community
 
 Restart or start a new Codex chat after installation. Codex Desktop and CLI use the same marketplace catalog.
 
-## ChatGPT web
+## Upload Token Max in Claude or ChatGPT
 
-ChatGPT web does not currently provide a user-facing flow to add community plugin marketplaces from GitHub. Install these in Codex Desktop or Codex CLI instead. ChatGPT does not automatically inherit local Codex plugins.
+Download the archive for the app you are using from the Token Max links above. These direct links point to the `v1.0.0` GitHub Release; [later releases](https://github.com/swack-tools/token-max-ai-plugin/releases) may contain newer versions.
+
+- **Claude web or Desktop:** Open **Customize → Plugins** and use the custom plugin upload option. Select `token-max-claude.zip`. Plugins are available on paid Claude plans; see [Claude's plugin guide](https://support.claude.com/en/articles/13837440-use-plugins-in-claude).
+- **ChatGPT web:** Open **Admin → Plugins → Add → Upload plugin** and select `token-max-codex.zip`. This option requires upload access or eligible workspace owner/admin permissions and may not be available in every workspace. See [OpenAI's plugin ZIP instructions](https://help.openai.com/en/articles/20001256-plugins-in-chatgpt-and-codex).
+
+For Codex Desktop and CLI, use the marketplace installation steps above. Workspace plugin availability and upload permissions depend on your account and organization settings.
 
 ## Update or remove
 
