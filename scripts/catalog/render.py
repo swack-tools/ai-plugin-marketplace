@@ -65,6 +65,8 @@ def render_site(catalog,templates,assets,content,output):
     output.mkdir(parents=True,exist_ok=True)
     env=Environment(loader=FileSystemLoader(templates),autoescape=select_autoescape(['html']),undefined=StrictUndefined)
     env.globals.update(source_url=source_url,content=render_content)
+    env.tests['contains'] = lambda values, value: value in values
+    env.filters['invocation_request'] = lambda text: re.sub(r'^(?:/[a-z0-9-]+:[a-z0-9-]+|\$[a-z0-9-]+)\s+', '', text)
     projects=catalog['projects']
     pages=[('index.html','overview.html',None),('install/index.html','install.html',None),('404.html','404.html',None)]+[(f'plugins/{p["id"]}/index.html','plugin.html',p) for p in projects]
     for route,template,project in pages:

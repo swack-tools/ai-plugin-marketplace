@@ -38,6 +38,18 @@
       "sha256": "628f69e82bbf86a8714142bd12c1d18cff26e5be88e77b606e88141c5d75e592",
       "before": "client OAuth,",
       "after": "client OAuth 2.0,"
+    },
+    {
+      "path": "catalog-info.json",
+      "sha256": "f879619c1d1f7d240d8d4a85e5e20b28ad9871500663655abd06b4069085ba56",
+      "before": "OAuth",
+      "after": "OAuth 2.0"
+    },
+    {
+      "path": "catalog-info.json",
+      "sha256": "f879619c1d1f7d240d8d4a85e5e20b28ad9871500663655abd06b4069085ba56",
+      "before": "Connect my Trakt account",
+      "after": "Connect your Trakt account"
     }
   ]
 }

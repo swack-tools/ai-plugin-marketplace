@@ -19,7 +19,7 @@
 <a href="{{ url('install/index.html') }}"{% if route == 'install/index.html' %} aria-current="page"{% endif %}>Install</a>
 <p class="nav-label">The collection</p>
 {% for p in projects %}<a class="project-link" href="{{ url('plugins/' ~ p.id ~ '/index.html') }}"{% if project and project.id == p.id %} aria-current="page"{% endif %}><span class="dot dot-{{ p.id }}" aria-hidden="true"></span>{{ p.name }}</a>
-{% if project and project.id == p.id %}<div class="subnav">{% for id,label in [('overview','Overview'),('examples','Examples'),('skills','Skills'),('servers','Servers'),('tools','Tools'),('hooks','Hooks'),('commands','Commands'),('usage','Client usage'),('releases','Releases')] %}<a href="#{{ id }}">{{ label }}</a>{% endfor %}</div>{% endif %}
+{% if project and project.id == p.id %}<div class="subnav">{% for id,label in [('overview','Overview'),('examples','Examples'),('skills','Skills'),('servers','Servers'),('tools','Tools'),('hooks','Hooks'),('commands','Command files'),('slash-commands','Slash commands'),('usage','Client usage'),('releases','Releases')] %}<a href="#{{ id }}">{{ label }}</a>{% endfor %}</div>{% endif %}
 {% endfor %}
 <div class="nav-footer"><a href="https://oxidexmore.slack.com/">Slack workspace ↗</a><span>Built in the open.<br>Made for your workflow.</span></div>
 </nav></details></aside>
