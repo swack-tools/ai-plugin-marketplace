@@ -56,7 +56,8 @@
         "claude": "trakt-mcp-claude.zip",
         "codex": "trakt-mcp-codex.zip",
         "checksums": "SHA256SUMS"
-      }
+      },
+      "tool_source": "src/mcp/protocol.rs"
     },
     {
       "id": "token-max",

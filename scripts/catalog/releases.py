@@ -12,9 +12,14 @@ def verify_package(data, digest, plugin_id, tag, client):
         raise CatalogError('Release checksum mismatch')
     files=archive_files(data)
     paths=['.claude-plugin/plugin.json'] if client=='claude' else ['plugin.json','.codex-plugin/plugin.json']
+    if files and all(p.startswith(plugin_id+'/') for p in files):
+        paths=[plugin_id+'/'+p for p in paths]
     manifests=[p for p in paths if p in files]
-    if len(manifests)!=1: raise CatalogError('Package must contain exactly one client manifest')
-    manifest=json.loads(files[manifests[0]])
+    if not manifests: raise CatalogError('Package has no client manifest')
+    identities=[json.loads(files[p]) for p in manifests]
+    if len({(m.get('name'),m.get('version')) for m in identities})!=1:
+        raise CatalogError('Conflicting package manifest identities')
+    manifest=identities[0]
     if manifest.get('name')!=plugin_id or manifest.get('version')!=tag.removeprefix('v'):
         raise CatalogError('Release tag and plugin identity/version disagree')
     return {'sha256':digest,'manifest_path':manifests[0],'version':manifest['version']}

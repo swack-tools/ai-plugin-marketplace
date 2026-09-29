@@ -10,7 +10,7 @@ def package(path, version='1.0.0', name='vale', extra=None):
     out=io.BytesIO()
     with zipfile.ZipFile(out,'w') as z:
         z.writestr(path,json.dumps({'name':name,'version':version}))
-        z.writestr('skills/check/SKILL.md','---\nname: check\n---\nHello')
+        z.writestr(('vale/' if path.startswith('vale/') else '')+'skills/check/SKILL.md','---\nname: check\n---\nHello')
         if extra: z.writestr(extra,json.dumps({'name':'other','version':version}))
     return out.getvalue()
 
@@ -20,6 +20,20 @@ class ReleaseTests(unittest.TestCase):
         for path in ['plugin.json','.codex-plugin/plugin.json']:
             data=package(path)
             self.assertEqual(verify_package(data,hashlib.sha256(data).hexdigest(),'vale','v1.0.0','codex')['manifest_path'],path)
+
+    def test_accepts_matching_portable_and_compatibility_identity(self):
+        from scripts.catalog.releases import verify_package
+        output=io.BytesIO()
+        with zipfile.ZipFile(output,'w') as z:
+            for path in ['token-max/plugin.json','token-max/.codex-plugin/plugin.json']:
+                z.writestr(path,json.dumps({'name':'token-max','version':'0.4.0'}))
+        data=output.getvalue()
+        self.assertEqual(verify_package(data,hashlib.sha256(data).hexdigest(),'token-max','v0.4.0','codex')['manifest_path'],'token-max/plugin.json')
+
+    def test_accepts_one_plugin_named_wrapper(self):
+        from scripts.catalog.releases import verify_package
+        data=package('vale/.claude-plugin/plugin.json')
+        self.assertEqual(verify_package(data,hashlib.sha256(data).hexdigest(),'vale','v1.0.0','claude')['manifest_path'],'vale/.claude-plugin/plugin.json')
 
     def test_rejects_wrong_checksum_identity_version_and_conflicts(self):
         from scripts.catalog.releases import verify_package
