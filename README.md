@@ -1,9 +1,11 @@
-# Swack Tools AI Plugin Marketplace
+# Plugin marketplace
 
-A shared Claude and Codex marketplace for plugins published by [swack-tools](https://github.com/swack-tools). Browse the [installation guide](https://ai.swacktech.com/) or install a plugin directly from its repository:
+A shared marketplace for Vale, Trakt MCP, and Token Max plugins for Claude and
+Codex. Add `swack-tools/ai-plugin-marketplace` in your client's marketplace
+settings, then install the plugins you want.
 
-- [Vale AI](https://github.com/swack-tools/vale-ai-plugin) — prose checks with Vale.
-- [Trakt AI](https://github.com/swack-tools/trakt-ai-plugin) — Trakt discovery, calendars, history, lists, and library tools.
-- [Token Max](https://github.com/swack-tools/token-max-ai-plugin) — report-only token audits.
+See the [catalog and installation guide](https://ai.oxidex.net/) for capabilities,
+examples, and available release downloads.
 
-Marketplace setup and platform-specific steps: **[ai.swacktech.com](https://ai.swacktech.com/)**.
+[Maintain the catalog](docs/maintaining-catalog.md) ·
+[Source attribution](docs/attribution.md)

@@ -1,5 +1,9 @@
 const navigation = document.querySelector('.navigation');
-if (navigation && matchMedia('(max-width: 760px)').matches) navigation.open = false;
+const mobileLayout = matchMedia('(max-width: 760px)');
+if (navigation) {
+  navigation.open = !mobileLayout.matches;
+  mobileLayout.addEventListener('change', event => { navigation.open = !event.matches; });
+}
 for (const button of document.querySelectorAll('.copy')) {
   if (!navigator.clipboard) continue;
   button.hidden = false;
