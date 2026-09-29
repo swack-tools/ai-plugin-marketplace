@@ -29,3 +29,7 @@ build/
 coverage/
 *.log
 .firecrawl/
+.cache/
+.venv/
+__pycache__/
+.superpowers/

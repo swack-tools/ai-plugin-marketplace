@@ -1,0 +1,43 @@
+{
+  "vale": [],
+  "token-max": [
+    {
+      "path": "site/index.html",
+      "sha256": "0bfd1b2d78b2f71aee4b5fc4fe10e255b7f5949584ac291b42e480279636b128",
+      "before": "added overhead and the limits",
+      "after": "added overhead, and the limits"
+    }
+  ],
+  "trakt-mcp": [
+    {
+      "path": "src/mcp/protocol.rs",
+      "sha256": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361",
+      "before": "browser OAuth login",
+      "after": "browser OAuth 2.0 login"
+    },
+    {
+      "path": "src/mcp/protocol.rs",
+      "sha256": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361",
+      "before": "statistics and other documented reads",
+      "after": "statistics, and other documented reads"
+    },
+    {
+      "path": "src/mcp/protocol.rs",
+      "sha256": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361",
+      "before": "collection or other parameters",
+      "after": "collection, or other parameters"
+    },
+    {
+      "path": "src/mcp/protocol.rs",
+      "sha256": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361",
+      "before": "Get Trakt's personalized movie/show recommendations based on its viewing/preferences signals, filtered by genre and year.",
+      "after": "Get Trakt's personalized movie/show recommendations based on its viewing/preferences signals. Filter the results by genre and year."
+    },
+    {
+      "path": "plugins/trakt-mcp/skills/connection-help/SKILL.md",
+      "sha256": "628f69e82bbf86a8714142bd12c1d18cff26e5be88e77b606e88141c5d75e592",
+      "before": "client OAuth,",
+      "after": "client OAuth 2.0,"
+    }
+  ]
+}

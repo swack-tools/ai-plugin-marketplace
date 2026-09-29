@@ -1,0 +1,62 @@
+{
+  "commit": "bd93b56aecfd667c242d50fc3d7ced0303630588",
+  "commit_date": "2026-09-29T18:55:08Z",
+  "release": {
+    "assets": {
+      "claude": {
+        "id": 596760074,
+        "manifest_path": "token-max/.claude-plugin/plugin.json",
+        "name": "token-max-claude.zip",
+        "sha256": "1f6f25f7f94ca01b156f8f1ccb88f0454e796527ae6207c16d0912cbb866d190",
+        "url": "https://github.com/swack-tools/token-max-ai-plugin/releases/download/v0.4.0/token-max-claude.zip",
+        "version": "0.4.0"
+      },
+      "codex": {
+        "id": 596760075,
+        "manifest_path": "token-max/plugin.json",
+        "name": "token-max-codex.zip",
+        "sha256": "df1c3beb94385477acc1a12918df310829369010775d4de5899c31a898c19bba",
+        "url": "https://github.com/swack-tools/token-max-ai-plugin/releases/download/v0.4.0/token-max-codex.zip",
+        "version": "0.4.0"
+      }
+    },
+    "commit": "fc99735f391684279a267248859657912980603e",
+    "published_at": "2026-09-29T00:19:01Z",
+    "tag": "v0.4.0",
+    "url": "https://github.com/swack-tools/token-max-ai-plugin/releases/tag/v0.4.0"
+  },
+  "release_candidates": [
+    {
+      "assets": [
+        {
+          "browser_download_url": "https://github.com/swack-tools/token-max-ai-plugin/releases/download/v0.4.0/SHA256SUMS",
+          "id": 596760073,
+          "name": "SHA256SUMS",
+          "size": 173,
+          "updated_at": "2026-09-29T00:19:00Z"
+        },
+        {
+          "browser_download_url": "https://github.com/swack-tools/token-max-ai-plugin/releases/download/v0.4.0/token-max-claude.zip",
+          "id": 596760074,
+          "name": "token-max-claude.zip",
+          "size": 25784,
+          "updated_at": "2026-09-29T00:19:00Z"
+        },
+        {
+          "browser_download_url": "https://github.com/swack-tools/token-max-ai-plugin/releases/download/v0.4.0/token-max-codex.zip",
+          "id": 596760075,
+          "name": "token-max-codex.zip",
+          "size": 26407,
+          "updated_at": "2026-09-29T00:19:00Z"
+        }
+      ],
+      "body": "## What's Changed\n* Bump actions/deploy-pages from 4.0.5 to 5.0.1 by @dependabot[bot] in https://github.com/swack-tools/token-max-ai-plugin/pull/1\n* Bump actions/upload-pages-artifact from 4.0.0 to 5.0.0 by @dependabot[bot] in https://github.com/swack-tools/token-max-ai-plugin/pull/2\n* Bump actions/checkout from 6.1.0 to 7.0.1 by @dependabot[bot] in https://github.com/swack-tools/token-max-ai-plugin/pull/3\n* Bump actions/configure-pages from 5.0.0 to 6.0.0 by @dependabot[bot] in https://github.com/swack-tools/token-max-ai-plugin/pull/4\n* Add copyable fix prompts to report-only token audits by @swackhamer in https://github.com/swack-tools/token-max-ai-plugin/pull/5\n* Add Claude and Codex release archives by @swackhamer in https://github.com/swack-tools/token-max-ai-plugin/pull/6\n\n## New Contributors\n* @dependabot[bot] made their first contribution in https://github.com/swack-tools/token-max-ai-plugin/pull/1\n* @swackhamer made their first contribution in https://github.com/swack-tools/token-max-ai-plugin/pull/5\n\n**Full Changelog**: https://github.com/swack-tools/token-max-ai-plugin/commits/v0.4.0",
+      "draft": false,
+      "html_url": "https://github.com/swack-tools/token-max-ai-plugin/releases/tag/v0.4.0",
+      "id": 398725044,
+      "prerelease": false,
+      "published_at": "2026-09-29T00:19:01Z",
+      "tag_name": "v0.4.0"
+    }
+  ]
+}

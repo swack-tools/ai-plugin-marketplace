@@ -1,0 +1,13 @@
+{% macro example(e) %}
+<div class="example"><div class="example-head"><span class="eyebrow">{{ e.title }}</span><button class="copy" type="button" hidden>Copy</button></div><pre><code>{{ e.input_or_trigger }}</code></pre><p><strong>Expected behavior.</strong> {{ e.expected_behavior }}</p><p class="fine"><strong>Prerequisites.</strong> {{ e.prerequisites | join(' ') }}</p><div class="source-line"><span>{{ e.platform }}</span>{% for s in e.sources %}<a href="{{ source_url(s) }}">Source{% if e.sources | length > 1 %} {{ loop.index }}{% endif %} ↗</a>{% endfor %}</div></div>
+{% endmacro %}
+{% macro inventory(project,kind) %}
+{% set items = project.capabilities | selectattr('kind','equalto',kind) | list %}
+{% for c in items %}<article class="capability" id="{{ c.id | replace(':','-') }}"><h3><code>{{ c.name }}</code></h3>{% if c.description %}<p>{{ c.description }}</p>{% endif %}
+<div class="tags">{% for client in c.clients %}<span>{{ client }}</span>{% endfor %}{% if kind == 'hook' %}<span>{{ c.details.matcher }}</span>{% if c.details.timeout_seconds %}<span>{{ c.details.timeout_seconds }} second timeout</span>{% endif %}{% endif %}{% if kind == 'mcp_server' %}<span>{{ c.details.transport }}</span>{% endif %}</div>
+{% if kind == 'mcp_server' and c.details.endpoint %}<p><a href="{{ c.details.endpoint }}">{{ c.details.endpoint }}</a></p>{% endif %}
+{% if kind == 'skill' and not c.details.user_invocable %}<p class="fine">This skill is not directly user-invocable.</p>{% endif %}
+{% if kind == 'skill' and c.details.disable_model_invocation %}<p class="fine">Automatic model invocation is turned off.</p>{% endif %}
+{% for s in c.sources %}<a class="source-link" href="{{ source_url(s) }}">{% if kind == 'skill' %}View SKILL.md{% else %}View definition{% endif %} ↗</a>{% endfor %}
+{% for e in c.examples %}{{ example(e) }}{% endfor %}</article>{% else %}<p class="empty">This plugin has no {{ {'skill':'skills','hook':'hooks','mcp_server':'MCP servers','mcp_tool':'MCP tools','command':'standalone command files'}[kind] }} in the inspected source.</p>{% endfor %}
+{% endmacro %}
