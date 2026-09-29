@@ -90,10 +90,9 @@ Only the separate deployment job receives Pages publication permissions.
 Failures preserve the previous deployment. The workflow publishes only
 `build/site`; source locks and diagnostic reports are separate artifacts.
 
-The site targets `ai.oxidex.net`. Before deploying the domain transition, verify
-DNS, the GitHub Pages custom domain, and HTTPS. A `CNAME` file alone does not
-configure those services. Preserve the existing domain until its transition is
-reviewed.
+The site uses the existing `ai.swacktech.com` custom domain. Keep the generated
+`CNAME`, canonical links, and sitemap aligned with that domain. Verify the
+published site over HTTPS after deployment.
 
 ## Update dependencies
 

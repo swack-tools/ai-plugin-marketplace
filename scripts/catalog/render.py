@@ -69,14 +69,14 @@ def render_site(catalog,templates,assets,content,output):
     pages=[('index.html','overview.html',None),('install/index.html','install.html',None),('404.html','404.html',None)]+[(f'plugins/{p["id"]}/index.html','plugin.html',p) for p in projects]
     for route,template,project in pages:
         target=output/route;target.parent.mkdir(parents=True,exist_ok=True)
-        context={'projects':projects,'project':project,'route':route,'url':lambda path:page_url(route,path),'domain':'https://ai.oxidex.net/','catalog_commit':catalog.get('marketplace_commit','a'*40)}
+        context={'projects':projects,'project':project,'route':route,'url':lambda path:page_url(route,path),'domain':'https://ai.swacktech.com/','catalog_commit':catalog.get('marketplace_commit','a'*40)}
         if route=='install/index.html':context['installation']={'text':(content/'install.md').read_text(),'format':'markdown'}
         html=env.get_template(template).render(**context)
         if PRIVATE.search(html): raise CatalogError('Private path or credential pattern in rendered page')
         target.write_text(html)
     shutil.copytree(assets,output/'assets',dirs_exist_ok=True)
     (output/'.nojekyll').write_text('')
-    (output/'CNAME').write_text('ai.oxidex.net\n')
+    (output/'CNAME').write_text('ai.swacktech.com\n')
     (output/'catalog.json').write_bytes(serialize_catalog(catalog))
-    (output/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://ai.oxidex.net/'+r+'</loc></url>' for r,_,_ in pages if r!='404.html')+'</urlset>')
+    (output/'sitemap.xml').write_text('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+''.join('<url><loc>https://ai.swacktech.com/'+r+'</loc></url>' for r,_,_ in pages if r!='404.html')+'</urlset>')
     return [output/r for r,_,_ in pages]
