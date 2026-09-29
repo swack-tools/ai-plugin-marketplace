@@ -56,3 +56,14 @@ class InventoryTests(unittest.TestCase):
             files={'plugins/vale/.claude-plugin/plugin.json':json.dumps({'name':'vale','skills':path}), 'plugins/vale/README.md':'Not a skill', 'plugins/vale/extra/README.md':'No definitions'}
             with self.assertRaisesRegex(CatalogError,'No supported skills'):
                 inventory_plugin(self.config,sample(files))
+
+    def test_distinct_stdio_servers_keep_client_variants_private(self):
+        from scripts.catalog.inventory import inventory_plugin
+        files={'plugins/vale/.claude-plugin/plugin.json':'{"name":"vale"}', 'plugins/vale/plugin.json':'{"name":"vale"}'}
+        for path,command in [('.mcp.json','private-first'),('mcp.json','private-second')]:
+            files['plugins/vale/'+path]=json.dumps({'mcpServers':{'check':{'command':command}}})
+        caps,diagnostics=inventory_plugin(self.config,sample(files))
+        self.assertEqual(len(caps),2)
+        self.assertTrue(diagnostics)
+        self.assertNotIn('private-first',repr(caps))
+        self.assertNotIn('private-second',repr(caps))

@@ -81,7 +81,7 @@ def frontmatter(data,path):
 
 
 def inventory_plugin(config,snapshot):
-    found={}; diagnostics=[]; hook_identities={}
+    found={}; diagnostics=[]; hook_identities={}; server_identities={}
     def add(cap,key=None):
         key=key or cap.id
         if key in found:
@@ -125,7 +125,7 @@ def inventory_plugin(config,snapshot):
                             raise CatalogError(f'Conflicting hook handlers: {id}')
                         hook_identities[id]=identity
                         add(Capability(id,'hook',event,None,[snapshot.source(path,pointer)],[client],details))
-        servers={}
+        servers={}; client_identities={}
         for path,inline in paths['mcpServers']:
             obj=inline if inline is not None else json_file(snapshot,path)
             values=obj.get('mcpServers',obj if inline else None)
@@ -139,12 +139,14 @@ def inventory_plugin(config,snapshot):
                     parsed=urlsplit(endpoint)
                     if parsed.scheme!='https' or parsed.username or parsed.password or parsed.query or parsed.fragment:
                         raise CatalogError('MCP endpoint cannot be safely published')
+                client_identities[name]=json.dumps({**value,'type':transport},sort_keys=True)
                 servers[name]=Capability('mcp_server:'+name,'mcp_server',name,None,[snapshot.source(path)],[client],{'transport':transport,'endpoint':endpoint})
         for name,cap in servers.items():
             key=cap.id
-            if key in found and found[key].details!=cap.details:
+            if key in found and server_identities[key]!=client_identities[name]:
                 cap.id+=':'+client
                 diagnostics.append(f'{name}: client configurations differ')
+            server_identities[cap.id]=client_identities[name]
             add(cap)
     if config.tool_source:
         source=config.tool_source; snapshot.source(source)
