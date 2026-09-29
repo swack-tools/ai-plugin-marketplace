@@ -1,0 +1,758 @@
+{
+  "vale": [
+    {
+      "id": "skill-check-prose",
+      "capability_refs": [
+        "skill:check-prose"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Check `docs/setup.md` with Vale. Report findings without editing.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+      ],
+      "expected_behavior": "Report file, line, rule, and correction for configured findings; leave the document unchanged.",
+      "sources": [
+        {
+          "path": "plugins/vale/skills/check-prose/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_digests": {
+        "plugins/vale/skills/check-prose/SKILL.md": "ee1b512c5e9cce91e4b3cf6fa3502fa17c1d9b891ae6d57d46bfebe5ad6e20cf"
+      }
+    },
+    {
+      "id": "skill-google-prose",
+      "capability_refs": [
+        "skill:google-prose"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Rewrite `docs/setup.md` using Google developer documentation style. Preserve the commands and verify the prose with Vale.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+      ],
+      "expected_behavior": "Revise prose, preserve technical meaning and code, and rerun the configured checker. Report remaining findings.",
+      "sources": [
+        {
+          "path": "plugins/vale/skills/google-prose/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_digests": {
+        "plugins/vale/skills/google-prose/SKILL.md": "f17333db7d9e26a93cfe12e9c17a9140a2d13f8a5bd1f886bf049d5a4aa5b424"
+      }
+    },
+    {
+      "id": "skill-procedural-prose",
+      "capability_refs": [
+        "skill:procedural-prose"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Revise this procedure: \"If the backup succeeds, stop the service and install the update.\" Preserve the condition and action order.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+      ],
+      "expected_behavior": "Keep the condition before both steps: \u201cIf the backup succeeds: 1. Stop the service. 2. Install the update.\u201d Do not claim formal STE compliance.",
+      "sources": [
+        {
+          "path": "plugins/vale/skills/procedural-prose/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_digests": {
+        "plugins/vale/skills/procedural-prose/SKILL.md": "8ed1494dfd3d0dbc80af1f37a659170af67d2f52f8e07afe840b244267216ddb"
+      }
+    },
+    {
+      "id": "hook-PreToolUse-0-0",
+      "capability_refs": [
+        "hook:PreToolUse:0:0"
+      ],
+      "title": "Example trigger",
+      "input_or_trigger": "The first tool call reads `README.md` after the agent session starts.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+      ],
+      "expected_behavior": "Initialize the session file-state baseline if absent; return empty JSON on success. This event does not itself rewrite prose.",
+      "sources": [
+        {
+          "path": "docs/behavior.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_digests": {
+        "docs/behavior.md": "d05c5d35e14c98340ab85450e804cb1356dfb4279d7dd0236bdb82d386d10d17"
+      }
+    },
+    {
+      "id": "hook-PostToolUse-0-0",
+      "capability_refs": [
+        "hook:PostToolUse:0:0"
+      ],
+      "title": "Example trigger",
+      "input_or_trigger": "After a baseline exists, a tool edits `docs/setup.md` and introduces a configured style finding.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+      ],
+      "expected_behavior": "Check the changed eligible file and add findings to model context. Preserve the original tool result and exit status.",
+      "sources": [
+        {
+          "path": "docs/behavior.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_digests": {
+        "docs/behavior.md": "d05c5d35e14c98340ab85450e804cb1356dfb4279d7dd0236bdb82d386d10d17"
+      }
+    },
+    {
+      "id": "hook-Stop-0-0",
+      "capability_refs": [
+        "hook:Stop:0:0"
+      ],
+      "title": "Example trigger",
+      "input_or_trigger": "The agent finishes its turn while findings remain in a file changed since the baseline.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Install Vale in a client that supports the selected skill or hook. Provide the documented Python and Vale runtimes."
+      ],
+      "expected_behavior": "Check touched files and request a correction pass. If `stop_hook_active` is already set, report remaining findings without another continuation.",
+      "sources": [
+        {
+          "path": "docs/behavior.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "source_digests": {
+        "docs/behavior.md": "d05c5d35e14c98340ab85450e804cb1356dfb4279d7dd0236bdb82d386d10d17"
+      }
+    }
+  ],
+  "trakt-mcp": [
+    {
+      "id": "skill-connection-help",
+      "capability_refs": [
+        "skill:connection-help"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "My Trakt tool returned `trakt_login_required`. Help me reconnect.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Distinguish client OAuth 2.0 from upstream Trakt authorization. Start the documented reconnect flow after this request; expose only the user-facing activation information.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/connection-help/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/connection-help/SKILL.md": "628f69e82bbf86a8714142bd12c1d18cff26e5be88e77b606e88141c5d75e592"
+      }
+    },
+    {
+      "id": "skill-find-title",
+      "capability_refs": [
+        "skill:find-title"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Find The Thing. Show the different movie versions.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Search and distinguish returned versions by year and identifiers; ask which one is intended before a later library change.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/find-title/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/find-title/SKILL.md": "5489d911073dd0f58cd7af6728950f1bdee99658de621ebdd91ae4b4b5c5521f"
+      }
+    },
+    {
+      "id": "skill-lists-and-watchlist",
+      "capability_refs": [
+        "skill:lists-and-watchlist"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Create a private list called Rainy Sunday and add Arrival (2016).",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the movie, create the requested private list, add it, and read the list back. Report partial failure if creation succeeds but addition fails.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/lists-and-watchlist/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/lists-and-watchlist/SKILL.md": "85a9c549de81921ac1640edf694f9e64721859ecf9f21c819b1c33857f86eed3"
+      }
+    },
+    {
+      "id": "skill-manage-library",
+      "capability_refs": [
+        "skill:manage-library"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Mark Arrival (2016) watched in my Trakt account.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the title and inspect the relevant operation schema. Perform only the requested write with write authorization, then verify the result.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/manage-library/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/manage-library/SKILL.md": "8882be2f279f49aca03cb7c55d08feac333297b60112c7255a02006bf7865575"
+      }
+    },
+    {
+      "id": "skill-upcoming-releases",
+      "capability_refs": [
+        "skill:upcoming-releases"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "What episodes of my watched shows air from October 1 through October 7, 2026?",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Use the bounded calendar window and the watched-show set. Distinguish personal-calendar membership from watched-only scope and report incomplete coverage.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/upcoming-releases/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/upcoming-releases/SKILL.md": "b6ca924e81788b2a4cb0baef14a2a0296b198d88a079e240d39bc688099ce181"
+      }
+    },
+    {
+      "id": "skill-watching-profile",
+      "capability_refs": [
+        "skill:watching-profile"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "List ALL my watched movies.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Follow every returned history page until completion is explicitly established; report partial coverage and a resume point if retrieval stops.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/watching-profile/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/watching-profile/SKILL.md": "a69a54ec39e466febcbc4944aee1f7cab3256302fe80508da27df85ea6a6253c"
+      }
+    },
+    {
+      "id": "skill-what-to-watch",
+      "capability_refs": [
+        "skill:what-to-watch"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Suggest three science-fiction movies I have not watched, based on ALL my viewing.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Complete the requested history traversal, retrieve recommendations, and exclude watched movie IDs. Do not claim an unseen result from partial history.",
+      "sources": [
+        {
+          "path": "plugins/trakt-mcp/skills/what-to-watch/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "plugins/trakt-mcp/skills/what-to-watch/SKILL.md": "39e4a28138733a1bd943fa8188844b45882a0858b01ce78bf26707a09c66ac7d"
+      }
+    },
+    {
+      "id": "mcp_server-trakt",
+      "capability_refs": [
+        "mcp_server:trakt"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Connect the documented Trakt MCP endpoint in a supported client, finish account authorization, then ask \u201cFind Arrival (2016).\u201d",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "The client exposes the server tools; the search returns matching titles. Installing skill files alone does not establish a live connection.",
+      "sources": [
+        {
+          "path": "docs/pages/connect.html"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/connect.html": "9c10fec34cf9f0b2528690ef39f10d9c1e9b56547ad036c993a6b155c14b2b36"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_request_login",
+      "capability_refs": [
+        "mcp_tool:trakt_request_login"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Reconnect my Trakt account after the tool reports `trakt_login_required`.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Begin device authorization and present the activation URL and user code; do not expose the device code.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_confirm_login",
+      "capability_refs": [
+        "mcp_tool:trakt_confirm_login"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "I approved the pending Trakt device login. Finish connecting.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Confirm the matching pending flow and report its actual authorization status; honor any retry delay.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_get_watched_history",
+      "capability_refs": [
+        "mcp_tool:trakt_get_watched_history"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Show my latest movie watch events.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Read recent movie history with compact details and documented pagination; preserve repeat watches and state the coverage.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_get_recommendations",
+      "capability_refs": [
+        "mcp_tool:trakt_get_recommendations"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Show ten Trakt science-fiction movie recommendations.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Request the movie medium, science-fiction genre, and limit 10; report returned matches without changing the account.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_search",
+      "capability_refs": [
+        "mcp_tool:trakt_search"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Find Arrival (2016).",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Search movies for the title and year and present the returned identity before any write.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_list_operations",
+      "capability_refs": [
+        "mcp_tool:trakt_list_operations"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Find the available catalog operations for movie ratings.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Search the local operation catalog and return operation IDs and statuses; this does not read account ratings.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_get_operation",
+      "capability_refs": [
+        "mcp_tool:trakt_get_operation"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Inspect the movie-rating operation found in the previous step.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Read its exact schema, authorization, restrictions, and effects before deciding whether it can be called.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_api_read",
+      "capability_refs": [
+        "mcp_tool:trakt_api_read"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "After inspecting a supported read operation, show the public rating for Arrival (2016).",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the movie and use the inspected GET operation and schema; report the returned data or restriction.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_api_write",
+      "capability_refs": [
+        "mcp_tool:trakt_api_write"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Rate Arrival (2016) 8 out of 10 in my account.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the movie and inspect the rating-write operation. Execute with the required authorization and explicit intent, then read back the rating. Do not automatically replay an uncertain write.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_discover_lists",
+      "capability_refs": [
+        "mcp_tool:trakt_discover_lists"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Show trending public science-fiction lists.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Browse trending lists with the supported genre filter and pagination. Do not treat this as a list-title search.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_get_list_items",
+      "capability_refs": [
+        "mcp_tool:trakt_get_list_items"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Show the first page of movies in the Rainy Sunday list I own.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the list owner and ID, read one movie page, and show the continuation state.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_get_calendar",
+      "capability_refs": [
+        "mcp_tool:trakt_get_calendar"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Show public movie releases from October 1 through October 7, 2026.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Read a seven-day public movie window. Release dates do not establish local streaming availability.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_create_list",
+      "capability_refs": [
+        "mcp_tool:trakt_create_list"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Create a private list called Rainy Sunday.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Create the private list with write permission and explicit intent; retain the returned ID for later operations.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_add_list_items",
+      "capability_refs": [
+        "mcp_tool:trakt_add_list_items"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Add Arrival (2016) to my Rainy Sunday list.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the owned list and movie IDs, add the requested item, and verify the list state. Report existing or failed items accurately.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    },
+    {
+      "id": "mcp_tool-trakt_remove_list_items",
+      "capability_refs": [
+        "mcp_tool:trakt_remove_list_items"
+      ],
+      "title": "Example request",
+      "input_or_trigger": "Remove Arrival (2016) from my Rainy Sunday list.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable the Trakt tools and connect the relevant account. Writes require explicit intent and a connection with trakt:write."
+      ],
+      "expected_behavior": "Resolve the owned list and movie IDs, remove only that item, and verify the result. Never retry an ambiguous write automatically.",
+      "sources": [
+        {
+          "path": "docs/pages/reference.html"
+        },
+        {
+          "path": "src/mcp/protocol.rs"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "source_digests": {
+        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
+        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+      }
+    }
+  ],
+  "token-max": [
+    {
+      "id": "skill-token-audit",
+      "capability_refs": [
+        "skill:token-audit"
+      ],
+      "title": "Try this workflow",
+      "input_or_trigger": "Review this conversation and the project for avoidable token use. Give me an evidence-backed report and proposed fixes; do not edit files or apply changes.",
+      "platform": "Supported Claude or Codex client",
+      "prerequisites": [
+        "Enable Token Max and provide access to the conversation or project being reviewed."
+      ],
+      "expected_behavior": "Report supported findings, uncertainty, and proposed improvements. Keep fixes as proposals and do not claim measured savings without evidence.",
+      "sources": [
+        {
+          "path": "plugins/token-max/skills/token-audit/SKILL.md"
+        }
+      ],
+      "evidence": "reviewed_illustration",
+      "reviewed_commit": "3d951ab08f2dd2a22b97514bde5b3f6bd1694603",
+      "source_digests": {
+        "plugins/token-max/skills/token-audit/SKILL.md": "2a2840ad6056e06a90f2fb5805d754dff42c01ec36aeb07633470f4bcc0e5253"
+      }
+    }
+  ]
+}
