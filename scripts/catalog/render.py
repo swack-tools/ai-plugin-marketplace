@@ -21,6 +21,19 @@ def source_url(ref):
     return (SourceRef(**ref) if isinstance(ref,dict) else ref).url
 
 
+def invocation_prompt(text, plugin, skill, client):
+    """Preserve a documented invocation for this client, including its namespace."""
+    name=re.escape(skill); namespace=re.escape(plugin)
+    claude=rf'/{namespace}:{name}'
+    codex=rf'\$(?:{namespace}:)?{name}'
+    own=claude if client=='claude' else codex
+    if re.match(rf'^{own}(?=\s|$)',text):
+        return text
+    request=re.sub(rf'^(?:{claude}|{codex})(?:\s+|$)','',text)
+    prefix=f'/{plugin}:{skill}' if client=='claude' else f'${skill}'
+    return f'{prefix} {request}'.rstrip()
+
+
 def page_url(from_page,to_page):
     return posixpath.relpath(to_page,posixpath.dirname(from_page) or '.')
 
@@ -66,7 +79,7 @@ def render_site(catalog,templates,assets,content,output):
     env=Environment(loader=FileSystemLoader(templates),autoescape=select_autoescape(['html']),undefined=StrictUndefined)
     env.globals.update(source_url=source_url,content=render_content)
     env.tests['contains'] = lambda values, value: value in values
-    env.filters['invocation_request'] = lambda text: re.sub(r'^(?:/[a-z0-9-]+:[a-z0-9-]+|\$[a-z0-9-]+)\s+', '', text)
+    env.filters['invocation_prompt'] = invocation_prompt
     projects=catalog['projects']
     pages=[('index.html','overview.html',None),('install/index.html','install.html',None),('404.html','404.html',None)]+[(f'plugins/{p["id"]}/index.html','plugin.html',p) for p in projects]
     for route,template,project in pages:

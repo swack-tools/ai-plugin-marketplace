@@ -87,9 +87,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "reviewed_commit": "d1f79abab193e5d3944535a1eedd6302bccba1f1",
       "source_digests": {
-        "docs/behavior.md": "d05c5d35e14c98340ab85450e804cb1356dfb4279d7dd0236bdb82d386d10d17"
+        "docs/behavior.md": "e4196c7dcc2d0bbbcfd2c5b60e2e85ce374b906779c470a14cfc52ec87b6b75f"
       }
     },
     {
@@ -110,9 +110,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "reviewed_commit": "d1f79abab193e5d3944535a1eedd6302bccba1f1",
       "source_digests": {
-        "docs/behavior.md": "d05c5d35e14c98340ab85450e804cb1356dfb4279d7dd0236bdb82d386d10d17"
+        "docs/behavior.md": "e4196c7dcc2d0bbbcfd2c5b60e2e85ce374b906779c470a14cfc52ec87b6b75f"
       }
     },
     {
@@ -133,9 +133,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "0cf1d30cae0b8087c9351894a313563f4b938e58",
+      "reviewed_commit": "d1f79abab193e5d3944535a1eedd6302bccba1f1",
       "source_digests": {
-        "docs/behavior.md": "d05c5d35e14c98340ab85450e804cb1356dfb4279d7dd0236bdb82d386d10d17"
+        "docs/behavior.md": "e4196c7dcc2d0bbbcfd2c5b60e2e85ce374b906779c470a14cfc52ec87b6b75f"
       }
     }
   ],

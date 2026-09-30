@@ -49,16 +49,26 @@ and expected archive names. Native files define component counts. Claude and
 Codex mirrors are deduplicated; tools remain separate from their server.
 
 `catalog-info.json` in an upstream repository can provide overview selectors,
-client guidance, and structured examples. The Token Max pilot uses this format
-for four examples and client-specific instructions. It avoids special parsing
-for these fields. The original `prompt` and `source` example fields remain
-supported through explicit reviewed mappings.
+client guidance, structured examples, and hook descriptions. All three plugins
+provide this file. Vale supplies separate Claude Code and Codex skill examples,
+requirements, host restrictions, and descriptions for each hook action. Trakt
+supplies examples and client guidance. Token Max supplies four audit examples.
+Native manifests still define capability counts.
+
+The renderer preserves documented client invocations, including namespaced
+Codex mentions such as `$vale:check-prose`. Skill-based Claude slash commands
+invoke the same skills; standalone command files are counted separately.
+The original `prompt` and `source` example fields remain supported through
+explicit reviewed mappings.
 
 `catalog/examples.json` fills documentation gaps. Each entry identifies its
 capability, input or trigger, prerequisites, expected behavior, and source.
 Reviewed examples include source digests. If a referenced file changes, review
 the example before updating its digest. Missing or stale examples fail the build.
-Do not claim that an illustrative example was executed.
+Do not claim that an illustrative example was executed. Vale's hook descriptions
+come from its catalog; concrete hook triggers and outcomes still use reviewed
+examples from `catalog/examples.json`. Review changes to `docs/behavior.md`
+before refreshing those example digests.
 
 `catalog/prose-edits.json` records small reviewed wording corrections needed for
 Vale. Each correction requires the expected source digest. Do not add a global
