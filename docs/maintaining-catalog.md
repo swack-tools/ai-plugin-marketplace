@@ -104,6 +104,50 @@ The site uses the existing `ai.swacktech.com` custom domain. Keep the generated
 `CNAME`, canonical links, and sitemap aligned with that domain. Verify the
 published site over HTTPS after deployment.
 
+## Release notifications
+
+Each plugin release workflow requests `pages.yml` on this repository's `main`
+branch after publishing both client archives and checksums. It sends
+`plugin_repository` and `plugin_tag` as workflow dispatch inputs. The receiver
+checks the repository against `catalog/projects.json`, validates the tag format,
+and records the request in the build summary. Manual runs can leave both inputs
+empty.
+
+The inputs identify the notification. The builder fetches current upstream
+`main` commits and selects the newest complete stable releases independently.
+It validates metadata, source evidence, archives, checksums, and prose before
+publishing. A notification does not bypass those checks or pin documentation
+to the release tag. Curated `catalog-info.json` must be committed upstream;
+metadata generated only in a release job is not an input to this build.
+
+### Configure authentication
+
+Before merging the plugin notification changes:
+
+1. Merge the marketplace receiver changes into `main`.
+2. Create a fine-grained personal access token owned by an authorized maintainer.
+   Select only `swack-tools/ai-plugin-marketplace` and grant repository
+   **Actions: write** permission. Complete organization approval if required.
+3. Store it as the Actions secret `MARKETPLACE_DISPATCH_TOKEN` in each of
+   `vale-ai-plugin`, `trakt-ai-plugin`, and `token-max-ai-plugin`. An organization
+   secret restricted to those three repositories also works. Keep the value
+   out of source files and logs, and renew it before expiration.
+4. Merge the plugin notification changes before creating the next release tags.
+
+The plugin's built-in `GITHUB_TOKEN` is limited to its own repository and cannot
+request this cross-repository build. The notification job has no built-in token
+permissions and does not check out or execute plugin code.
+
+A successful notification means GitHub accepted the build request. Check this
+repository's Actions run for the separate build and Pages deployment result.
+If notification fails, the published release remains available. Fix the secret
+or dispatch error, then rerun only failed jobs in the plugin release workflow.
+This retries notification without recreating the release. The daily refresh
+remains available as a fallback.
+
+See GitHub's [workflow dispatch permissions](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event)
+and [token scope](https://docs.github.com/en/actions/concepts/security/github_token).
+
 ## Update dependencies
 
 Resolve dependency updates with a hash-generating lock tool. For example:
