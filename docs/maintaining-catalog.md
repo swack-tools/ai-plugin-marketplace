@@ -71,8 +71,10 @@ examples from `catalog/examples.json`. Review changes to `docs/behavior.md`
 before refreshing those example digests.
 
 `catalog/prose-edits.json` records small reviewed wording corrections needed for
-Vale. Each correction requires the expected source digest. Do not add a global
-rewrite that changes commands, technical meaning, or permission requirements.
+Vale. Each correction applies only where its exact wording appears, so upstream
+edits elsewhere in a file need no update here. The prose check still reviews any
+new wording. Do not add a global rewrite that changes commands, technical
+meaning, or permission requirements.
 
 To add a plugin, extend the repository allowlist, registry, fixtures, examples,
 and tests. Unknown manifest shapes and missing declared files are errors.
