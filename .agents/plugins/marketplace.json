@@ -7,8 +7,9 @@
     {
       "name": "vale",
       "source": {
-        "source": "git",
+        "source": "git-subdir",
         "url": "https://github.com/swack-tools/vale-ai-plugin.git",
+        "path": "plugins/vale",
         "ref": "main"
       },
       "policy": {
@@ -20,8 +21,9 @@
     {
       "name": "trakt-mcp",
       "source": {
-        "source": "git",
+        "source": "git-subdir",
         "url": "https://github.com/swack-tools/trakt-ai-plugin.git",
+        "path": "plugins/trakt-mcp",
         "ref": "main"
       },
       "policy": {
@@ -33,8 +35,9 @@
     {
       "name": "token-max",
       "source": {
-        "source": "git",
+        "source": "git-subdir",
         "url": "https://github.com/swack-tools/token-max-ai-plugin.git",
+        "path": "plugins/token-max",
         "ref": "main"
       },
       "policy": {

@@ -158,9 +158,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "bf1812fbb8890148f0a81149dbc478323ca06337",
       "source_digests": {
-        "plugins/trakt-mcp/skills/connection-help/SKILL.md": "628f69e82bbf86a8714142bd12c1d18cff26e5be88e77b606e88141c5d75e592"
+        "plugins/trakt-mcp/skills/connection-help/SKILL.md": "f73dc4d1d7e729ae9ef4499393e9de58988afafb4c028159c3de14c19b0d24a8"
       }
     },
     {
@@ -204,9 +204,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "bf1812fbb8890148f0a81149dbc478323ca06337",
       "source_digests": {
-        "plugins/trakt-mcp/skills/lists-and-watchlist/SKILL.md": "85a9c549de81921ac1640edf694f9e64721859ecf9f21c819b1c33857f86eed3"
+        "plugins/trakt-mcp/skills/lists-and-watchlist/SKILL.md": "bab22d8995ae276fd8a499f41eb15ecc0c36cd833fbf7fa439be2dd3d61b6130"
       }
     },
     {
@@ -227,9 +227,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "bf1812fbb8890148f0a81149dbc478323ca06337",
       "source_digests": {
-        "plugins/trakt-mcp/skills/manage-library/SKILL.md": "8882be2f279f49aca03cb7c55d08feac333297b60112c7255a02006bf7865575"
+        "plugins/trakt-mcp/skills/manage-library/SKILL.md": "a1b5de6031408c17a1dd47fea4b09470caa3d2c5c41421c7e6372f98dff18f1c"
       }
     },
     {
@@ -273,9 +273,9 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "plugins/trakt-mcp/skills/watching-profile/SKILL.md": "a69a54ec39e466febcbc4944aee1f7cab3256302fe80508da27df85ea6a6253c"
+        "plugins/trakt-mcp/skills/watching-profile/SKILL.md": "af1fd39f5fa14f2c82738911eadee8aafd6cf4a69e8f0c91abac1846b64be780"
       }
     },
     {
@@ -345,10 +345,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -372,10 +372,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -399,10 +399,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -426,10 +426,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -453,10 +453,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -480,10 +480,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -507,10 +507,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -534,10 +534,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -561,10 +561,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -588,10 +588,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -615,10 +615,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -642,10 +642,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -669,10 +669,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -696,10 +696,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     },
     {
@@ -723,10 +723,10 @@
         }
       ],
       "evidence": "reviewed_illustration",
-      "reviewed_commit": "c5b631b0c3c69160b17e078126235e54f352d0dc",
+      "reviewed_commit": "aa5f397d5270dc9f5a5775b1e2f383476d9ccd5a",
       "source_digests": {
-        "docs/pages/reference.html": "eddb1125c19773e1dcce079dc0bf09a7047c02e2ec991e46f0b95b8ab43f329f",
-        "src/mcp/protocol.rs": "30fa2fbc3e4117dbab4392d3a3a51511a92d363a7931c25f36fc0ef4e6dd7361"
+        "docs/pages/reference.html": "91f2429224aa6c37c255c1562a4bdccf8bfef67e0096f4a37a1601f3524f3e05",
+        "src/mcp/protocol.rs": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd"
       }
     }
   ],
