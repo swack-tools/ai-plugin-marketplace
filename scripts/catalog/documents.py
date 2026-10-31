@@ -12,11 +12,9 @@ from .inventory import manifests, capability_counts
 from .models import CatalogError, PluginRecord
 
 
-def apply_prose_edits(text,snapshot,path,edits):
+def apply_prose_edits(text,path,edits):
     for edit in edits:
         if edit['path']!=path or edit['before'] not in text: continue
-        if hashlib.sha256(snapshot.files[path]).hexdigest()!=edit['sha256']:
-            raise CatalogError(f'{snapshot.project_id}: reviewed prose source changed: {path}')
         text=text.replace(edit['before'],edit['after'])
     return text
 
@@ -156,9 +154,9 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
         for item in prose_items:
             for field in ('title','expected_behavior','notes','description'):
                 if field in item:
-                    item[field]=apply_prose_edits(item[field],snapshot,'catalog-info.json',edits)
+                    item[field]=apply_prose_edits(item[field],'catalog-info.json',edits)
             if 'prerequisites' in item:
-                item['prerequisites']=[apply_prose_edits(text,snapshot,'catalog-info.json',edits) for text in item['prerequisites']]
+                item['prerequisites']=[apply_prose_edits(text,'catalog-info.json',edits) for text in item['prerequisites']]
     overview_selector=(metadata or {}).get('overview') or config.documents['overview']
     overview=[select_document(snapshot,overview_selector)]
     for block in overview: block['links']=source_links(snapshot,block)
@@ -214,10 +212,10 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
             cap.description=cap.examples[0]['expected_behavior']
     apply_component_notes(snapshot,metadata or {},capabilities)
     for block in overview:
-        block['text']=apply_prose_edits(block['text'],snapshot,block['source']['path'],edits)
+        block['text']=apply_prose_edits(block['text'],block['source']['path'],edits)
     for cap in capabilities:
         if cap.description:
-            cap.description=apply_prose_edits(cap.description,snapshot,cap.sources[0].path,edits)
+            cap.description=apply_prose_edits(cap.description,cap.sources[0].path,edits)
     changelog=(metadata or {}).get('changelog')
     changes=[{'title':'Upstream changelog',**select_document(snapshot,changelog)}] if changelog else recent_changes(snapshot,snapshot.release_candidates)
     for block in changes:

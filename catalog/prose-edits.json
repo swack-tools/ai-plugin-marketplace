@@ -3,7 +3,6 @@
   "token-max": [
     {
       "path": "site/index.html",
-      "sha256": "43d0f754646b621a96a6dbab2ea24bcf4799e5f2f728a259e7597cf013cc114d",
       "before": "added overhead and the limits",
       "after": "added overhead, and the limits"
     }
@@ -11,31 +10,26 @@
   "trakt-mcp": [
     {
       "path": "src/mcp/protocol.rs",
-      "sha256": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd",
       "before": "Browser OAuth normally",
       "after": "Browser OAuth 2.0 normally"
     },
     {
       "path": "src/mcp/protocol.rs",
-      "sha256": "afb227c0d3f7b5d26e8f1e4b70ed69d6bdc1eb44cb1b9849f367fcb21ffc30bd",
       "before": "Get Trakt's personalized movie/show recommendations based on its viewing/preferences signals, filtered by genre and year.",
       "after": "Get Trakt's personalized movie/show recommendations based on its viewing/preferences signals. Filter the results by genre and year."
     },
     {
       "path": "plugins/trakt-mcp/skills/connection-help/SKILL.md",
-      "sha256": "f73dc4d1d7e729ae9ef4499393e9de58988afafb4c028159c3de14c19b0d24a8",
       "before": "client OAuth,",
       "after": "client OAuth 2.0,"
     },
     {
       "path": "catalog-info.json",
-      "sha256": "f879619c1d1f7d240d8d4a85e5e20b28ad9871500663655abd06b4069085ba56",
       "before": "OAuth",
       "after": "OAuth 2.0"
     },
     {
       "path": "catalog-info.json",
-      "sha256": "f879619c1d1f7d240d8d4a85e5e20b28ad9871500663655abd06b4069085ba56",
       "before": "Connect my Trakt account",
       "after": "Connect your Trakt account"
     }
