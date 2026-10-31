@@ -80,6 +80,31 @@ def frontmatter(data,path):
     return value
 
 
+def manifest_tools(snapshot,path):
+    manifest=json_file(snapshot,path)
+    tools=manifest.get('tools')
+    if manifest.get('schema_version')!=1 or not isinstance(tools,list) or not tools:
+        raise CatalogError('Tool manifest adapter drifted')
+    declarations=[]
+    for tool in tools:
+        values=[tool.get(k) if isinstance(tool,dict) else None for k in ('name','title','description')]
+        if not all(isinstance(v,str) and v for v in values): raise CatalogError('Tool manifest adapter drifted')
+        declarations.append(tuple(values))
+    if len({d[0] for d in declarations})!=len(declarations): raise CatalogError('Duplicate tool declaration')
+    return declarations
+
+
+def literal_tools(snapshot,path):
+    snapshot.source(path)
+    text=snapshot.files[path].decode()
+    # This adapter only accepts literal tool(name, title, description, ...) declarations.
+    pattern=r'\btool\(\s*("(?:[^"\\]|\\.)*")\s*,\s*("(?:[^"\\]|\\.)*")\s*,\s*("(?:[^"\\]|\\.)*")\s*,'
+    declarations=re.findall(pattern,text)
+    if not declarations or len(declarations)!=len(re.findall(r'\btool\(',text)):
+        raise CatalogError('Tool declaration adapter drifted')
+    return [tuple(json.loads(v) for v in declaration) for declaration in declarations]
+
+
 def inventory_plugin(config,snapshot):
     found={}; diagnostics=[]; hook_identities={}; server_identities={}
     def add(cap,key=None):
@@ -148,20 +173,18 @@ def inventory_plugin(config,snapshot):
                 diagnostics.append(f'{name}: client configurations differ')
             server_identities[cap.id]=client_identities[name]
             add(cap)
-    if config.tool_source:
-        source=config.tool_source; snapshot.source(source)
-        text=snapshot.files[source].decode()
-        # This adapter only accepts literal tool(name, title, description, ...) declarations.
-        pattern=r'\btool\(\s*("(?:[^"\\]|\\.)*")\s*,\s*("(?:[^"\\]|\\.)*")\s*,\s*("(?:[^"\\]|\\.)*")\s*,'
-        declarations=re.findall(pattern,text)
-        if not declarations or len(declarations)!=len(re.findall(r'\btool\(',text)):
-            raise CatalogError('Tool declaration adapter drifted')
+    if config.tool_manifest and config.tool_manifest in snapshot.files:
+        source=config.tool_manifest; declarations=manifest_tools(snapshot,source)
+    elif config.tool_source:
+        source=config.tool_source; declarations=literal_tools(snapshot,source)
+    else:
+        source=None
+    if source:
         table=BeautifulSoup(snapshot.files['docs/pages/reference.html'],'html.parser')
         documented={row.select_one('td code').get_text() for row in table.select('tr') if row.select_one('td code') and row.select_one('td code').get_text().startswith('trakt_')}
-        if {json.loads(d[0]) for d in declarations}!=documented: raise CatalogError('Tool declarations and documentation disagree')
-        for raw_name,title,description in declarations:
-            name=json.loads(raw_name)
-            add(Capability('mcp_tool:'+name,'mcp_tool',name,json.loads(description),[snapshot.source(source)],['claude','codex'],{'server_id':'trakt','title':json.loads(title)}))
+        if {name for name,_,_ in declarations}!=documented: raise CatalogError('Tool declarations and documentation disagree')
+        for name,title,description in declarations:
+            add(Capability('mcp_tool:'+name,'mcp_tool',name,description,[snapshot.source(source)],['claude','codex'],{'server_id':'trakt','title':title}))
     return sorted(found.values(),key=lambda c:(c.kind,c.id)),diagnostics
 
 

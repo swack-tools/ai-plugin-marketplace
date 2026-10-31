@@ -32,6 +32,46 @@
       "path": "catalog-info.json",
       "before": "Connect my Trakt account",
       "after": "Connect your Trakt account"
+    },
+    {
+      "path": "api/trakt/tools.json",
+      "before": "Browser OAuth normally",
+      "after": "Browser OAuth 2.0 normally"
+    },
+    {
+      "path": "api/trakt/tools.json",
+      "before": "Get Trakt's personalized movie/show recommendations based on its viewing/preferences signals, filtered by genre and year.",
+      "after": "Get Trakt's personalized movie/show recommendations based on its viewing/preferences signals. Filter the results by genre and year."
+    },
+    {
+      "path": "api/trakt/tools.json",
+      "before": "from the personal (my) or public (all) calendar",
+      "after": "from the personal or public calendar"
+    },
+    {
+      "path": "api/trakt/tools.json",
+      "before": "list ID, with optional sorting and library filters.",
+      "after": "list ID. Sorting and library filters are optional."
+    },
+    {
+      "path": "api/trakt/tools.json",
+      "before": "for one show, including completed episodes",
+      "after": "for one show. The result includes completed episodes"
+    },
+    {
+      "path": "catalog-info.json",
+      "before": "Delete my list",
+      "after": "Delete your list"
+    },
+    {
+      "path": "catalog-info.json",
+      "before": "Edit my list",
+      "after": "Edit your list"
+    },
+    {
+      "path": "catalog-info.json",
+      "before": "Read my lists",
+      "after": "Read your lists"
     }
   ]
 }

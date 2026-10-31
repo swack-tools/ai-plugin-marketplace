@@ -49,6 +49,7 @@ class ProjectConfig:
     documents: dict
     release_assets: dict
     tool_source: str | None = None
+    tool_manifest: str | None = None
 
 
 @dataclass

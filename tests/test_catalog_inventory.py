@@ -24,6 +24,27 @@ class InventoryTests(unittest.TestCase):
             s=sample({'plugins/vale/.claude-plugin/plugin.json':json.dumps({'name':'vale','skills':path})})
             with self.assertRaises(CatalogError): inventory_plugin(self.config,s)
 
+    def trakt_tools(self,files):
+        from scripts.catalog.inventory import inventory_plugin
+        config=load_registry(Path('catalog/projects.json'))[1]
+        docs='<table><tr><td><code>trakt_search</code></td></tr></table>'
+        snapshot=SourceSnapshot('trakt-mcp',config.repo,'a'*40,'2026-01-01',{k:v.encode() for k,v in {'plugins/trakt-mcp/.claude-plugin/plugin.json':'{"name":"trakt-mcp"}','docs/pages/reference.html':docs,**files}.items()})
+        return [c for c in inventory_plugin(config,snapshot)[0] if c.kind=='mcp_tool']
+
+    def test_tool_manifest_replaces_literal_declarations(self):
+        manifest={'schema_version':1,'tools':[{'name':'trakt_search','title':'Find','description':'Manifest text.'}]}
+        tool=self.trakt_tools({'api/trakt/tools.json':json.dumps(manifest),'src/mcp/protocol.rs':'no declarations'})[0]
+        self.assertEqual((tool.name,tool.description,tool.details['title'],tool.sources[0].path),('trakt_search','Manifest text.','Find','api/trakt/tools.json'))
+
+    def test_literal_declarations_remain_supported_without_manifest(self):
+        tool=self.trakt_tools({'src/mcp/protocol.rs':'tool("trakt_search","Find","Literal text.",x)'})[0]
+        self.assertEqual((tool.description,tool.sources[0].path),('Literal text.','src/mcp/protocol.rs'))
+
+    def test_unexpected_tool_manifest_fails(self):
+        entry={'name':'trakt_search','title':'Find','description':'Text.'}
+        for manifest in [{'schema_version':2,'tools':[entry]},{'schema_version':1,'tools':[]},{'schema_version':1,'tools':[{'name':'trakt_search'}]},{'schema_version':1,'tools':[entry,entry]}]:
+            with self.assertRaises(CatalogError): self.trakt_tools({'api/trakt/tools.json':json.dumps(manifest)})
+
     def test_duplicate_skill_names_fail(self):
         from scripts.catalog.inventory import inventory_plugin
         s=sample({'plugins/vale/.claude-plugin/plugin.json':'{"name":"vale"}',**{f'plugins/vale/skills/{x}/SKILL.md':'---\nname: same\ndescription: A\n---\nA' for x in ('a','b')}})
