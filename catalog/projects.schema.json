@@ -64,6 +64,12 @@
               "string",
               "null"
             ]
+          },
+          "tool_manifest": {
+            "type": [
+              "string",
+              "null"
+            ]
           }
         }
       }

@@ -45,7 +45,8 @@ use `--offline` and require no network access.
 ## Maintain sources and examples
 
 `catalog/projects.json` defines repositories, plugin roots, source selectors,
-and expected archive names. Native files define component counts. Claude and
+and expected archive names. A project's `tool_manifest` lists its MCP tools as JSON
+and takes priority over the literal declarations in `tool_source`. Native files define component counts. Claude and
 Codex mirrors are deduplicated; tools remain separate from their server.
 
 `catalog-info.json` in an upstream repository can provide overview selectors,

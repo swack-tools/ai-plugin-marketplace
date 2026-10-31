@@ -185,8 +185,9 @@ def enrich_plugin(config,snapshot,capabilities,release,examples_path=Path('catal
             normalized={**matches[0],**normalized,'capability_refs':matches[0]['capability_refs']}
         entries.append(normalized)
     covered={ref for e in entries for ref in e.get('capability_refs',[])}
-    entries.extend(e for e in reviewed if not set(e['capability_refs'])<=covered)
     ids={c.id:c for c in capabilities}; examples=[]; seen=set()
+    # A reviewed example for a capability the plugin removed no longer applies.
+    entries.extend(e for e in reviewed if not set(e['capability_refs'])<=covered and set(e['capability_refs'])&set(ids))
     for raw in entries:
         entry=normalize_example(raw)
         if entry['id'] in seen: raise CatalogError('Duplicate example ID')

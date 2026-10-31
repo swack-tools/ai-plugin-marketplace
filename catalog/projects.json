@@ -57,7 +57,8 @@
         "codex": "trakt-mcp-codex.zip",
         "checksums": "SHA256SUMS"
       },
-      "tool_source": "src/mcp/protocol.rs"
+      "tool_source": "src/mcp/protocol.rs",
+      "tool_manifest": "api/trakt/tools.json"
     },
     {
       "id": "token-max",
