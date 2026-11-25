@@ -2,7 +2,7 @@
 
 ## MCP tools
 
-The bundled `pilot` MCP server exposes 10 tools:
+The bundled `pilot` MCP server exposes 10 tools. See the [complete technical reference](https://colab.ai.swacktech.com/reference.html) for input parameters, return schemas, and architecture details.
 
 | Tool | Title | Description |
 | :--- | :--- | :--- |

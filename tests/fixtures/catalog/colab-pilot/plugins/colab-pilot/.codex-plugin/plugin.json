@@ -1,12 +1,12 @@
 {
   "name": "colab-pilot",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
   "author": {
     "name": "Allen Swackhamer",
     "url": "https://github.com/swack-tools"
   },
-  "homepage": "https://ai.swacktech.com/plugins/colab-pilot/",
+  "homepage": "https://colab.ai.swacktech.com/",
   "repository": "https://github.com/swack-tools/colab-pilot-plugin",
   "license": "Apache-2.0",
   "keywords": [
@@ -29,7 +29,7 @@
       "Read",
       "Write"
     ],
-    "websiteURL": "https://ai.swacktech.com/plugins/colab-pilot/",
+    "websiteURL": "https://colab.ai.swacktech.com/",
     "defaultPrompt": [
       "Open the Colab Pilot live dashboard and audit Compute Unit burn.",
       "Pre-stage training archives to Drive at zero cost and launch a detached BF16 GPU job.",

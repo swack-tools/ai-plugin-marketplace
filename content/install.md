@@ -72,7 +72,7 @@ codex plugin add vale@swack-tools-community
 codex plugin remove vale@swack-tools-community
 ```
 
-Replace `vale` with `trakt-mcp` or `token-max` as needed. Review each plugin repository for its permissions and connection requirements.
+Replace `vale` with `trakt-mcp`, `token-max`, or `colab-pilot` as needed. Review each plugin repository for its permissions and connection requirements.
 
 
 ## Import a marketplace in an eligible workspace

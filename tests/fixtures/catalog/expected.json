@@ -1,5 +1,5 @@
 {
-  "marketplace_commit": "d2177684b31f9895e9ed399bd0b9d611b77fcc31",
+  "marketplace_commit": "45a0270a9981f11cc235a64673946fdd012abeb4",
   "projects": [
     {
       "accent": "#086b68",
@@ -3547,7 +3547,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3561,13 +3561,13 @@
           "name": "PreToolUse",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "/hooks/PreToolUse/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
               "repo": "swack-tools/colab-pilot-plugin"
             },
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3599,7 +3599,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3613,13 +3613,13 @@
           "name": "SessionStart",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "/hooks/SessionStart/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
               "repo": "swack-tools/colab-pilot-plugin"
             },
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3651,7 +3651,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3665,13 +3665,13 @@
           "name": "Stop",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "/hooks/Stop/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
               "repo": "swack-tools/colab-pilot-plugin"
             },
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3700,7 +3700,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3714,13 +3714,13 @@
           "name": "pilot",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/.mcp.json",
               "repo": "swack-tools/colab-pilot-plugin"
             },
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3749,7 +3749,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3763,7 +3763,7 @@
           "name": "colab_allocate_cascade",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3792,7 +3792,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3806,7 +3806,7 @@
           "name": "colab_dashboard",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3835,7 +3835,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3849,7 +3849,7 @@
           "name": "colab_keep_warm",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3878,7 +3878,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3892,7 +3892,7 @@
           "name": "colab_launch_detached",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3921,7 +3921,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3935,7 +3935,7 @@
           "name": "colab_mount_rclone",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -3964,7 +3964,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -3978,7 +3978,7 @@
           "name": "colab_poll_job",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4007,7 +4007,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4021,7 +4021,7 @@
           "name": "colab_reset_vram",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4050,7 +4050,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4064,7 +4064,7 @@
           "name": "colab_smart_transfer",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4093,7 +4093,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4107,7 +4107,7 @@
           "name": "colab_stop_all",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4136,7 +4136,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4150,7 +4150,7 @@
           "name": "colab_wakeup_alarm",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4179,7 +4179,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4193,7 +4193,7 @@
           "name": "colab-pilot",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4222,7 +4222,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4236,7 +4236,7 @@
           "name": "colab-shard-cpu",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4265,7 +4265,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4279,7 +4279,7 @@
           "name": "colab-train",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4308,7 +4308,7 @@
               ],
               "sources": [
                 {
-                  "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                  "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
                   "repo": "swack-tools/colab-pilot-plugin"
@@ -4322,7 +4322,7 @@
           "name": "colab-watch",
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4352,7 +4352,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4371,7 +4371,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4390,7 +4390,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4409,7 +4409,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4428,7 +4428,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4447,7 +4447,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4466,7 +4466,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4485,7 +4485,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4504,7 +4504,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4523,7 +4523,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4542,7 +4542,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4561,7 +4561,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4580,7 +4580,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4599,7 +4599,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4618,7 +4618,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4637,7 +4637,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4656,7 +4656,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4675,7 +4675,7 @@
           ],
           "sources": [
             {
-              "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+              "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-plugin"
@@ -4684,7 +4684,7 @@
           "title": "Prevent orphaned Compute Unit burn on turn end"
         }
       ],
-      "homepage": "https://github.com/swack-tools/colab-pilot-plugin",
+      "homepage": "https://colab.ai.swacktech.com/",
       "id": "colab-pilot",
       "name": "Colab Pilot",
       "overview": [
@@ -4692,19 +4692,19 @@
           "format": "markdown",
           "links": {},
           "source": {
-            "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+            "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
             "locator": "",
             "path": "docs/index.md",
             "repo": "swack-tools/colab-pilot-plugin"
           },
-          "text": "Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex. Stage large datasets to Google Drive at zero Compute Unit cost, provision BF16 GPU cascades, launch detached jobs resilient to WebSocket drops, and guard against orphaned sessions."
+          "text": "Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex. Stage large datasets to Google Drive at zero Compute Unit cost, provision BF16 GPU cascades, launch detached jobs resilient to WebSocket drops, and guard against orphaned sessions.\n\nRead the [full documentation and workflow guide](https://colab.ai.swacktech.com/) for setup walkthroughs, architecture details, and tool specifications."
         }
       ],
       "pending_releases": [],
       "release": null,
       "repo": "swack-tools/colab-pilot-plugin",
-      "source_commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
-      "source_version": "1.1.0",
+      "source_commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
+      "source_version": "1.1.1",
       "summary": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
       "usage": [
         {
@@ -4712,12 +4712,12 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                 "locator": "",
                 "path": "docs/usage.md",
                 "repo": "swack-tools/colab-pilot-plugin"
               },
-              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat."
+              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
             }
           ],
           "notes": "Install with agy plugin install https://github.com/swack-tools/colab-pilot-plugin and invoke /colab-pilot, /colab-train, /colab-shard-cpu, or /colab-watch.",
@@ -4729,12 +4729,12 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                 "locator": "",
                 "path": "docs/usage.md",
                 "repo": "swack-tools/colab-pilot-plugin"
               },
-              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat."
+              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
             }
           ],
           "notes": "Install from swack-tools/ai-plugin-marketplace and invoke /colab-pilot:colab-pilot or ask Claude to orchestrate Colab.",
@@ -4746,12 +4746,12 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "adc38914083aab4aa7a1e5774ae16eebfe9cf9de",
+                "commit": "d4f9427f7c95e96d8d139376be62db7b52a7e656",
                 "locator": "",
                 "path": "docs/usage.md",
                 "repo": "swack-tools/colab-pilot-plugin"
               },
-              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat."
+              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
             }
           ],
           "notes": "Install from https://github.com/swack-tools/ai-plugin-marketplace.git and invoke $colab-pilot or $colab-train.",

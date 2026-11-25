@@ -1,16 +1,30 @@
 # Colab Pilot Plugin
 
-Zero-waste Google Colab orchestration plugin for Antigravity: GPU cascade provisioning, 0-CU Google Drive pre-staging, WebSocket-proof detached jobs, Compute Unit leak guardrails, parallel CPU sharding, and an interactive MCP App dashboard.
+Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex: GPU cascade provisioning, 0-CU Google Drive pre-staging, WebSocket-proof detached jobs, Compute Unit leak guardrails, parallel CPU sharding, and an interactive MCP App dashboard.
+
+[Documentation](https://colab.ai.swacktech.com/) · [Install guide](https://colab.ai.swacktech.com/install.html) · [Workflows](https://colab.ai.swacktech.com/workflows.html) · [Technical reference](https://colab.ai.swacktech.com/reference.html) · [Plugin marketplace](https://ai.swacktech.com/plugins/colab-pilot/)
 
 ## Install
 
 From a GitHub release archive:
 
 ```sh
-gh release download v1.0.0 --repo swack-tools/colab-pilot-plugin --pattern 'colab-pilot-*.zip' --dir /tmp/colab-pilot-release
+gh release download v1.1.1 --repo swack-tools/colab-pilot-plugin --pattern 'colab-pilot-*.zip' --dir /tmp/colab-pilot-release
 unzip -q /tmp/colab-pilot-release/colab-pilot-*.zip -d /tmp/colab-pilot-release/colab-pilot
 agy plugin install /tmp/colab-pilot-release/colab-pilot
 agy plugin enable colab-pilot
+```
+
+From Claude Code or Codex using the Swack Tools marketplace:
+
+```sh
+# Claude Code
+/plugin marketplace add swack-tools/ai-plugin-marketplace
+/plugin install colab-pilot@swack-tools-community
+
+# Codex
+codex plugin marketplace add https://github.com/swack-tools/ai-plugin-marketplace.git
+codex plugin add colab-pilot@swack-tools-community
 ```
 
 Or directly from a local clone:

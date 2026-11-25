@@ -97,7 +97,7 @@
       "repo": "swack-tools/colab-pilot-plugin",
       "ref": "main",
       "plugin_root": "plugins/colab-pilot",
-      "homepage": "https://github.com/swack-tools/colab-pilot-plugin",
+      "homepage": "https://colab.ai.swacktech.com/",
       "accent": "#b45309",
       "documents": {
         "overview": {

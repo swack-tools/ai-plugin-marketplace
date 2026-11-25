@@ -2,6 +2,8 @@
 
 Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex. Stage large datasets to Google Drive at zero Compute Unit cost, provision BF16 GPU cascades, launch detached jobs resilient to WebSocket drops, and guard against orphaned sessions.
 
+Read the [full documentation and workflow guide](https://colab.ai.swacktech.com/) for setup walkthroughs, architecture details, and tool specifications.
+
 ## Key features
 
 - **GPU cascade provisioning**: Negotiate `A100-highmem`, `A100`, `G4`, and `L4` runtimes with automatic hardware probing.
