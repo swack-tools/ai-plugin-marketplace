@@ -1,6 +1,6 @@
 {
   "name": "colab-pilot",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "description": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
   "author": {
     "name": "Allen Swackhamer",
