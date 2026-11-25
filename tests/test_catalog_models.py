@@ -12,7 +12,7 @@ class ModelsTests(unittest.TestCase):
     def test_registry_contains_exact_project_roots(self):
         from scripts.catalog.models import load_registry
         projects = load_registry(Path('catalog/projects.json'))
-        self.assertEqual([(p.id, p.plugin_root) for p in projects], [('vale','plugins/vale'), ('trakt-mcp','plugins/trakt-mcp'), ('token-max','plugins/token-max')])
+        self.assertEqual([(p.id, p.plugin_root) for p in projects], [('vale','plugins/vale'), ('trakt-mcp','plugins/trakt-mcp'), ('token-max','plugins/token-max'), ('colab-pilot','plugins/colab-pilot')])
 
     def test_rejects_absolute_or_parent_paths(self):
         from scripts.catalog.models import relative_path, CatalogError

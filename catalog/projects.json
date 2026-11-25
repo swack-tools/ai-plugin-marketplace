@@ -90,6 +90,36 @@
         "codex": "token-max-codex.zip",
         "checksums": "SHA256SUMS"
       }
+    },
+    {
+      "id": "colab-pilot",
+      "name": "Colab Pilot",
+      "repo": "swack-tools/colab-pilot-plugin",
+      "ref": "main",
+      "plugin_root": "plugins/colab-pilot",
+      "homepage": "https://github.com/swack-tools/colab-pilot-plugin",
+      "accent": "#b45309",
+      "documents": {
+        "overview": {
+          "path": "docs/index.md",
+          "format": "markdown",
+          "mode": "lead"
+        },
+        "usage": {
+          "path": "docs/usage.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": [
+            "Client usage"
+          ]
+        }
+      },
+      "release_assets": {
+        "claude": "colab-pilot-claude.zip",
+        "codex": "colab-pilot-codex.zip",
+        "checksums": "SHA256SUMS"
+      },
+      "tool_manifest": "api/colab-pilot/tools.json"
     }
   ]
 }

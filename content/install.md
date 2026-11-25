@@ -6,7 +6,7 @@ Open **Customize → Plugins → Add → Add marketplace → Add from GitHub**, 
 swack-tools/ai-plugin-marketplace
 ```
 
-Install **Vale**, **Trakt MCP**, or **Token Max**. Claude.ai uses the same account-level plugin manager when marketplace plugins are available to your plan/organization. Organization admins may need to approve plugins or connectors.
+Install **Vale**, **Trakt MCP**, **Token Max**, or **Colab Pilot**. Claude.ai uses the same account-level plugin manager when marketplace plugins are available to your plan/organization. Organization admins may need to approve plugins or connectors.
 
 ## Install with the Claude command-line tool
 
@@ -15,6 +15,7 @@ claude plugin marketplace add swack-tools/ai-plugin-marketplace
 claude plugin install vale@swack-tools-community
 claude plugin install trakt-mcp@swack-tools-community
 claude plugin install token-max@swack-tools-community
+claude plugin install colab-pilot@swack-tools-community
 ```
 
 Install only the plugins you want. Start a new session after installing. For a project installation, add `--scope project` to the plugin install command.
@@ -33,9 +34,18 @@ Then install from the Codex app's **Plugins** screen, or use the command-line to
 codex plugin add vale@swack-tools-community
 codex plugin add trakt-mcp@swack-tools-community
 codex plugin add token-max@swack-tools-community
+codex plugin add colab-pilot@swack-tools-community
 ```
 
 Restart or start a new Codex chat after installation. Codex Desktop and command-line tool use the same marketplace catalog.
+
+## Antigravity installation
+
+Install **Colab Pilot** directly in Antigravity:
+
+```sh
+agy plugin install https://github.com/swack-tools/colab-pilot-plugin
+```
 
 ## Upload a plugin archive
 

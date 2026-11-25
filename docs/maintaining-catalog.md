@@ -50,11 +50,12 @@ and takes priority over the literal declarations in `tool_source`. Native files 
 Codex mirrors are deduplicated; tools remain separate from their server.
 
 `catalog-info.json` in an upstream repository can provide overview selectors,
-client guidance, structured examples, and hook descriptions. All three plugins
+client guidance, structured examples, and hook descriptions. All four plugins
 provide this file. Vale supplies separate Claude Code and Codex skill examples,
 requirements, host restrictions, and descriptions for each hook action. Trakt
 supplies examples and client guidance. Token Max supplies four audit examples.
-Native manifests still define capability counts.
+Colab Pilot supplies examples, platform notes, MCP server metadata, and hook
+descriptions. Native manifests still define capability counts.
 
 The renderer preserves documented client invocations, including namespaced
 Codex mentions such as `$vale:check-prose`. Skill-based Claude slash commands

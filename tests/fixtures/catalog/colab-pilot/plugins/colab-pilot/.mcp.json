@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "pilot": {
+      "command": "sh",
+      "args": [
+        "-c",
+        "exec python3 -B \"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-.}}/scripts/colab_mcp_server.py\""
+      ]
+    }
+  }
+}

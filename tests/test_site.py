@@ -19,4 +19,4 @@ class SiteTests(unittest.TestCase):
             for path in (a,b):render_site(catalog,Path('site/templates'),Path('site/assets'),Path('content'),Path(path))
             files=lambda root:{p.relative_to(root).as_posix():p.read_bytes() for p in Path(root).rglob('*') if p.is_file()}
             self.assertEqual(files(a),files(b))
-            self.assertEqual(len(list(Path(a).rglob('*.html'))),6)
+            self.assertEqual(len(list(Path(a).rglob('*.html'))),7)

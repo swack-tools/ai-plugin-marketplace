@@ -1,0 +1,450 @@
+{
+  "schemaVersion": 1,
+  "pluginId": "colab-pilot",
+  "overview": {
+    "path": "docs/index.md",
+    "format": "markdown",
+    "mode": "lead",
+    "required": true
+  },
+  "examples": [
+    {
+      "id": "skill-colab-pilot",
+      "capability_refs": ["skill:colab-pilot"],
+      "title": "Audit Compute Unit usage and active sessions",
+      "input_or_trigger": "/colab-pilot:colab-pilot Check active Colab sessions and Compute Unit burn.",
+      "platform": "claude-code",
+      "prerequisites": [
+        "Install Colab Pilot and authenticate the colab command-line tool."
+      ],
+      "expected_behavior": "Inspect live Compute Unit balance, burn rate, and active assignments without allocating a new VM.",
+      "sources": [
+        {
+          "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Quick Actions"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "skill-colab-train",
+      "capability_refs": ["skill:colab-train"],
+      "title": "Run zero-waste GPU training on Colab",
+      "input_or_trigger": "$colab-train Stage my dataset archive to Drive and launch training on an A100 or L4.",
+      "platform": "codex",
+      "prerequisites": [
+        "Validate local archives and configure rclone for Google Drive staging."
+      ],
+      "expected_behavior": "Stage archives to Google Drive at zero Compute Unit cost, allocate a BF16 GPU cascade, launch detached training, and stop the VM after pulling outputs.",
+      "sources": [
+        {
+          "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Phase 1 — 0-CU Drive Pre-Staging"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "skill-colab-shard-cpu",
+      "capability_refs": ["skill:colab-shard-cpu"],
+      "title": "Fan out CPU extraction across parallel shards",
+      "input_or_trigger": "/colab-pilot:colab-shard-cpu Run extraction across 5 CPU-only Colab workers.",
+      "platform": "claude-code",
+      "prerequisites": [
+        "Provide a shard-aware Python script that reads SHARD_INDEX and SHARD_TOTAL."
+      ],
+      "expected_behavior": "Provision isolated CPU-only Colab VMs, run each shard concurrently, merge the resulting archives, and stop every worker VM.",
+      "sources": [
+        {
+          "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Steps"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "skill-colab-watch",
+      "capability_refs": ["skill:colab-watch"],
+      "title": "Monitor a detached job with the watchdog",
+      "input_or_trigger": "$colab-watch Watch my detached Colab job and trigger the wakeup alarm on completion.",
+      "platform": "codex",
+      "prerequisites": [
+        "Launch a detached job with colab_launch_detached."
+      ],
+      "expected_behavior": "Poll remote job status and logs until completion, error, or stall, then print Compute Unit usage.",
+      "sources": [
+        {
+          "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["1. Remote Detached Job Watchdog (Recommended)"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "mcp-server-pilot",
+      "capability_refs": ["mcp_server:pilot"],
+      "title": "Connect the pilot MCP server",
+      "input_or_trigger": "Open the Colab Pilot dashboard and inspect active sessions.",
+      "platform": "claude-code",
+      "prerequisites": [
+        "Install Colab Pilot with Python 3.9 or later and the colab command-line tool."
+      ],
+      "expected_behavior": "Start the local stdio pilot MCP server and expose all 10 Colab orchestration tools.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-dashboard",
+      "capability_refs": ["mcp_tool:colab_dashboard"],
+      "title": "Open the Colab Pilot dashboard",
+      "input_or_trigger": "Show my Colab Compute Unit balance and one-fifth monthly budget status.",
+      "platform": "claude-code",
+      "prerequisites": ["Authenticate the colab command-line tool."],
+      "expected_behavior": "Return live Compute Unit balance, burn rate, active sessions, detached jobs, and alarm state.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-allocate-cascade",
+      "capability_refs": ["mcp_tool:colab_allocate_cascade"],
+      "title": "Allocate a BF16 GPU cascade",
+      "input_or_trigger": "Allocate a BF16 GPU session named train-v10 trying A100-highmem, A100, G4, and L4.",
+      "platform": "codex",
+      "prerequisites": ["Ensure Colab account has GPU quota."],
+      "expected_behavior": "Try each GPU tier in order, probe VRAM and system RAM, verify BF16 support, and return safe DataLoader sizing.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-mount-rclone",
+      "capability_refs": ["mcp_tool:colab_mount_rclone"],
+      "title": "Mount Google Drive headlessly with rclone",
+      "input_or_trigger": "Mount Google Drive on session train-v10 in streaming mode.",
+      "platform": "claude-code",
+      "prerequisites": ["Configure a local rclone.conf file for Google Drive."],
+      "expected_behavior": "Copy rclone configuration to the Colab VM and mount Drive read-only without interactive OAuth 2.0 prompts.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-smart-transfer",
+      "capability_refs": ["mcp_tool:colab_smart_transfer"],
+      "title": "Transfer large archives safely",
+      "input_or_trigger": "Pre-stage dataset.tar to Google Drive at zero Compute Unit cost.",
+      "platform": "codex",
+      "prerequisites": ["Provide a valid local path."],
+      "expected_behavior": "Route files up to 24 MiB directly and larger files through Drive staging or verified 24 MiB chunks.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-launch-detached",
+      "capability_refs": ["mcp_tool:colab_launch_detached"],
+      "title": "Launch a detached training job",
+      "input_or_trigger": "Launch train.py detached on session train-v10.",
+      "platform": "claude-code",
+      "prerequisites": ["Allocate an active Colab session."],
+      "expected_behavior": "Start the script under nohup with log normalization and 10-second GPU heartbeat status JSON.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-poll-job",
+      "capability_refs": ["mcp_tool:colab_poll_job"],
+      "title": "Poll detached job status",
+      "input_or_trigger": "Poll job job-1234 on session train-v10.",
+      "platform": "codex",
+      "prerequisites": ["Start a job with colab_launch_detached."],
+      "expected_behavior": "Download status JSON and recent log lines via REST without holding a WebSocket open.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-reset-vram",
+      "capability_refs": ["mcp_tool:colab_reset_vram"],
+      "title": "Flush zombie VRAM after an OOM",
+      "input_or_trigger": "Reset zombie VRAM on session train-v10.",
+      "platform": "claude-code",
+      "prerequisites": ["Have an active GPU Colab session."],
+      "expected_behavior": "Clear traceback references, IPython caches, and PyTorch CUDA cache, then report before and after VRAM.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-keep-warm",
+      "capability_refs": ["mcp_tool:colab_keep_warm"],
+      "title": "Register a keep-warm lease",
+      "input_or_trigger": "Keep session train-v10 warm for 30 minutes.",
+      "platform": "codex",
+      "prerequisites": ["Have an active Colab session."],
+      "expected_behavior": "Record a timed lease so the Stop guardrail allows ending the turn without stopping the VM.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-stop-all",
+      "capability_refs": ["mcp_tool:colab_stop_all"],
+      "title": "Stop all active Colab VMs",
+      "input_or_trigger": "Stop all active Colab sessions and verify zero burn rate.",
+      "platform": "claude-code",
+      "prerequisites": ["Authenticate the colab command-line tool."],
+      "expected_behavior": "Stop every active Colab session, clear leases, and confirm zero active assignments.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-wakeup-alarm",
+      "capability_refs": ["mcp_tool:colab_wakeup_alarm"],
+      "title": "Run wakeup alarm self-test",
+      "input_or_trigger": "Run a self-test on the Colab Pilot wakeup alarm.",
+      "platform": "codex",
+      "prerequisites": ["Use macOS for live speech playback or any host for WAV self-test."],
+      "expected_behavior": "Verify voice rotation and accelerating chirp synthesis without playing audio.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "hook-session-start",
+      "capability_refs": ["hook:SessionStart:0:0"],
+      "title": "Report active Colab sessions at startup",
+      "input_or_trigger": "Start a new session while a Colab VM is allocated.",
+      "platform": "claude-code",
+      "prerequisites": ["Enable Colab Pilot lifecycle hooks."],
+      "expected_behavior": "Inject a concise system message listing active sessions and current Compute Unit burn rate.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Lifecycle hooks"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "hook-pre-tool-use",
+      "capability_refs": ["hook:PreToolUse:0:0"],
+      "title": "Block TTY-hanging or unsafe colab command-line calls",
+      "input_or_trigger": "Attempt to run colab drivemount or a 50 MiB direct colab upload.",
+      "platform": "claude-code",
+      "prerequisites": ["Enable Colab Pilot lifecycle hooks."],
+      "expected_behavior": "Deny the command before execution and direct the agent to colab_mount_rclone or colab_smart_transfer.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Lifecycle hooks"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "hook-stop",
+      "capability_refs": ["hook:Stop:0:0"],
+      "title": "Prevent orphaned Compute Unit burn on turn end",
+      "input_or_trigger": "Finish a turn while an unleased Colab VM is still running.",
+      "platform": "claude-code",
+      "prerequisites": ["Enable Colab Pilot lifecycle hooks."],
+      "expected_behavior": "Block stopping and instruct the agent to call colab_stop_all or colab_keep_warm.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Lifecycle hooks"]
+        }
+      ],
+      "evidence": "documented"
+    }
+  ],
+  "platforms": {
+    "antigravity": {
+      "status": "documented",
+      "notes": "Install with agy plugin install https://github.com/swack-tools/colab-pilot-plugin and invoke /colab-pilot, /colab-train, /colab-shard-cpu, or /colab-watch.",
+      "sources": [
+        {
+          "path": "docs/usage.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Client usage"]
+        }
+      ]
+    },
+    "claude-code": {
+      "status": "documented",
+      "notes": "Install from swack-tools/ai-plugin-marketplace and invoke /colab-pilot:colab-pilot or ask Claude to orchestrate Colab.",
+      "sources": [
+        {
+          "path": "docs/usage.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Client usage"]
+        }
+      ]
+    },
+    "codex": {
+      "status": "documented",
+      "notes": "Install from https://github.com/swack-tools/ai-plugin-marketplace.git and invoke $colab-pilot or $colab-train.",
+      "sources": [
+        {
+          "path": "docs/usage.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Client usage"]
+        }
+      ]
+    },
+    "slack": {
+      "status": "not_documented",
+      "notes": "The repository does not document a Slack integration.",
+      "sources": []
+    }
+  },
+  "mcpServers": {
+    "pilot": {
+      "description": "Local stdio MCP server providing 10 Colab orchestration tools and an interactive dashboard.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ]
+    }
+  },
+  "hooks": [
+    {
+      "target": {
+        "path": "plugins/colab-pilot/hooks/hooks.json",
+        "pointer": "/hooks/SessionStart/0/hooks/0"
+      },
+      "description": "Report active Colab sessions and Compute Unit burn rate when a session starts.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Lifecycle hooks"]
+        }
+      ]
+    },
+    {
+      "target": {
+        "path": "plugins/colab-pilot/hooks/hooks.json",
+        "pointer": "/hooks/PreToolUse/0/hooks/0"
+      },
+      "description": "Block interactive TTY colab commands, invalid GPU tiers, and direct uploads larger than 30 MiB.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Lifecycle hooks"]
+        }
+      ]
+    },
+    {
+      "target": {
+        "path": "plugins/colab-pilot/hooks/hooks.json",
+        "pointer": "/hooks/Stop/0/hooks/0"
+      },
+      "description": "Block ending a turn while an unleased Colab VM remains allocated with no running detached job.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["Lifecycle hooks"]
+        }
+      ]
+    }
+  ],
+  "changelog": null
+}

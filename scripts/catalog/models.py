@@ -5,7 +5,9 @@ from pathlib import Path, PurePosixPath
 import re
 from urllib.parse import quote
 
-REPOSITORIES = frozenset(f'swack-tools/{name}-ai-plugin' for name in ('vale', 'trakt', 'token-max'))
+REPOSITORIES = frozenset(
+    f'swack-tools/{name}' for name in ('vale-ai-plugin', 'trakt-ai-plugin', 'token-max-ai-plugin', 'colab-pilot-plugin')
+)
 
 class CatalogError(ValueError):
     """A safe, actionable build failure."""

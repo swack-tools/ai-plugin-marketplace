@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "tools": [
+    {
+      "name": "colab_dashboard",
+      "title": "Open Colab Pilot dashboard",
+      "description": "Open the interactive Colab Pilot dashboard showing Compute Unit balance, burn rate, monthly budget guardrail, active sessions, detached jobs, and alarm controls."
+    },
+    {
+      "name": "colab_allocate_cascade",
+      "title": "Allocate GPU cascade",
+      "description": "Try GPU tiers in priority order, verify BF16 support, probe VRAM, system RAM, and NVENC availability, and return safe DataLoader and crop sizing."
+    },
+    {
+      "name": "colab_mount_rclone",
+      "title": "Mount Google Drive with rclone",
+      "description": "Configure rclone and mount Google Drive headlessly on a Colab VM with workload-tuned VFS flags and optional secret forwarding."
+    },
+    {
+      "name": "colab_smart_transfer",
+      "title": "Transfer files safely",
+      "description": "Transfer files between your workstation and Colab without Jupyter API 500 errors using direct upload for small files and Drive staging or chunking for large archives."
+    },
+    {
+      "name": "colab_launch_detached",
+      "title": "Launch detached job",
+      "description": "Launch a Python script detached with nohup on a Colab VM with carriage-return log normalization and 10-second GPU heartbeat status."
+    },
+    {
+      "name": "colab_poll_job",
+      "title": "Poll detached job",
+      "description": "Poll a detached Colab job over the REST Contents API to read status JSON and log tails without holding a WebSocket open."
+    },
+    {
+      "name": "colab_reset_vram",
+      "title": "Reset zombie VRAM",
+      "description": "Clear sys.last_traceback, IPython Out caches, optional globals, and torch.cuda.empty_cache to reclaim VRAM after a failed cell."
+    },
+    {
+      "name": "colab_keep_warm",
+      "title": "Register keep-warm lease",
+      "description": "Register or clear a timed keep-warm lease for a Colab session so the Stop guardrail allows ending a turn intentionally."
+    },
+    {
+      "name": "colab_stop_all",
+      "title": "Stop Colab sessions",
+      "description": "Stop one named Colab session or all active sessions, clear leases, and return verified Compute Unit usage."
+    },
+    {
+      "name": "colab_wakeup_alarm",
+      "title": "Control wakeup alarm",
+      "description": "Start, stop, inspect, or test the escalating macOS text-to-speech and chirp wakeup alarm."
+    }
+  ]
+}

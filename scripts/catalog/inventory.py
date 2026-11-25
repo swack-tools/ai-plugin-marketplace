@@ -180,11 +180,17 @@ def inventory_plugin(config,snapshot):
     else:
         source=None
     if source:
-        table=BeautifulSoup(snapshot.files['docs/pages/reference.html'],'html.parser')
-        documented={row.select_one('td code').get_text() for row in table.select('tr') if row.select_one('td code') and row.select_one('td code').get_text().startswith('trakt_')}
+        if 'docs/pages/reference.html' in snapshot.files:
+            table=BeautifulSoup(snapshot.files['docs/pages/reference.html'],'html.parser')
+            documented={row.select_one('td code').get_text() for row in table.select('tr') if row.select_one('td code') and row.select_one('td code').get_text().startswith('trakt_')}
+        elif 'docs/reference.md' in snapshot.files:
+            documented=set(re.findall(r'^\|\s*`([a-z0-9_]+)`\s*\|',snapshot.files['docs/reference.md'].decode('utf-8'),flags=re.MULTILINE))
+        else:
+            raise CatalogError('Missing tool reference documentation')
         if {name for name,_,_ in declarations}!=documented: raise CatalogError('Tool declarations and documentation disagree')
+        server_id=next((c.name for c in found.values() if c.kind=='mcp_server'),config.id)
         for name,title,description in declarations:
-            add(Capability('mcp_tool:'+name,'mcp_tool',name,description,[snapshot.source(source)],['claude','codex'],{'server_id':'trakt','title':title}))
+            add(Capability('mcp_tool:'+name,'mcp_tool',name,description,[snapshot.source(source)],['claude','codex'],{'server_id':server_id,'title':title}))
     return sorted(found.values(),key=lambda c:(c.kind,c.id)),diagnostics
 
 

@@ -5,6 +5,7 @@ The catalog imports selected documentation and metadata from these projects:
 - [Vale](https://github.com/swack-tools/vale-ai-plugin), licensed under MIT.
 - [Trakt MCP](https://github.com/swack-tools/trakt-ai-plugin), licensed under GPL-3.0-only.
 - [Token Max](https://github.com/swack-tools/token-max-ai-plugin), with no standalone license file in the inspected source.
+- [Colab Pilot](https://github.com/swack-tools/colab-pilot-plugin), licensed under Apache-2.0.
 
 Generated pages link to the exact source commits used for their content. Small
 wording corrections are recorded in `catalog/prose-edits.json`; the original
