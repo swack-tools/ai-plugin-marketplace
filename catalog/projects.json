@@ -94,7 +94,7 @@
     {
       "id": "colab-pilot",
       "name": "Colab Pilot",
-      "repo": "swack-tools/colab-pilot-plugin",
+      "repo": "swack-tools/colab-pilot-ai-plugin",
       "ref": "main",
       "plugin_root": "plugins/colab-pilot",
       "homepage": "https://colab.ai.swacktech.com/",

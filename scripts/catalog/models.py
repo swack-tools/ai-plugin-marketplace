@@ -6,7 +6,7 @@ import re
 from urllib.parse import quote
 
 REPOSITORIES = frozenset(
-    f'swack-tools/{name}' for name in ('vale-ai-plugin', 'trakt-ai-plugin', 'token-max-ai-plugin', 'colab-pilot-plugin')
+    f'swack-tools/{name}' for name in ('vale-ai-plugin', 'trakt-ai-plugin', 'token-max-ai-plugin', 'colab-pilot-ai-plugin')
 )
 
 class CatalogError(ValueError):

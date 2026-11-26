@@ -6,7 +6,7 @@ The bundled `pilot` MCP server exposes 10 tools. See the [complete technical ref
 
 | Tool | Title | Description |
 | :--- | :--- | :--- |
-| `colab_dashboard` | Open Colab Pilot dashboard | Open the interactive dashboard showing Compute Unit balance, burn rate, active sessions, and detached jobs. |
+| `colab_dashboard` | Open Colab Pilot dashboard | Open the interactive dashboard showing Compute Unit balance, burn rate, active sessions, live GPU, VRAM, system RAM, disk, and CPU telemetry, and detached jobs. |
 | `colab_allocate_cascade` | Allocate GPU cascade | Try GPU tiers in priority order within a 145-second budget, skip unsupported accelerators immediately, verify BF16 support, and probe VRAM and system RAM. |
 | `colab_mount_rclone` | Mount Google Drive with rclone | Configure rclone and mount Google Drive headlessly with workload-tuned VFS flags. |
 | `colab_smart_transfer` | Transfer files safely | Transfer files using direct upload for small files and async background Drive staging or chunking for large archives. |

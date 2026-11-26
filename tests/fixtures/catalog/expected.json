@@ -1,5 +1,5 @@
 {
-  "marketplace_commit": "065e742b9754df94ad8a21d6ca2f1c977270c4ab",
+  "marketplace_commit": "9732492f7196bbe39d8e3623be61b89b0803a472",
   "projects": [
     {
       "accent": "#086b68",
@@ -3547,10 +3547,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Block TTY-hanging or unsafe colab command-line calls"
@@ -3561,16 +3561,16 @@
           "name": "PreToolUse",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "/hooks/PreToolUse/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3599,10 +3599,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Report active Colab sessions at startup"
@@ -3613,16 +3613,16 @@
           "name": "SessionStart",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "/hooks/SessionStart/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3651,10 +3651,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Prevent orphaned Compute Unit burn on turn end"
@@ -3665,16 +3665,16 @@
           "name": "Stop",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "/hooks/Stop/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3700,10 +3700,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Connect the pilot MCP server"
@@ -3714,16 +3714,16 @@
           "name": "pilot",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/.mcp.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3749,10 +3749,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Allocate a BF16 GPU cascade"
@@ -3763,10 +3763,10 @@
           "name": "colab_allocate_cascade",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3792,10 +3792,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Open the Colab Pilot dashboard"
@@ -3806,10 +3806,10 @@
           "name": "colab_dashboard",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3835,10 +3835,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Register a keep-warm lease"
@@ -3849,10 +3849,10 @@
           "name": "colab_keep_warm",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3878,10 +3878,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Launch a detached training job"
@@ -3892,10 +3892,10 @@
           "name": "colab_launch_detached",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3921,10 +3921,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Mount Google Drive headlessly with rclone"
@@ -3935,10 +3935,10 @@
           "name": "colab_mount_rclone",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -3964,10 +3964,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Poll detached job status"
@@ -3978,10 +3978,10 @@
           "name": "colab_poll_job",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4007,10 +4007,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Flush zombie VRAM after an OOM"
@@ -4021,10 +4021,10 @@
           "name": "colab_reset_vram",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4050,10 +4050,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Transfer large archives safely"
@@ -4064,10 +4064,10 @@
           "name": "colab_smart_transfer",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4093,10 +4093,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Stop all active Colab VMs"
@@ -4107,10 +4107,10 @@
           "name": "colab_stop_all",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4136,10 +4136,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "docs/reference.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Run wakeup alarm self-test"
@@ -4150,10 +4150,10 @@
           "name": "colab_wakeup_alarm",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4179,10 +4179,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Audit Compute Unit usage and active sessions"
@@ -4193,10 +4193,10 @@
           "name": "colab-pilot",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4222,10 +4222,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Fan out CPU extraction across parallel shards"
@@ -4236,10 +4236,10 @@
           "name": "colab-shard-cpu",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4265,10 +4265,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Run zero-waste GPU training on Colab"
@@ -4279,10 +4279,10 @@
           "name": "colab-train",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         },
@@ -4308,10 +4308,10 @@
               ],
               "sources": [
                 {
-                  "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                  "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
-                  "repo": "swack-tools/colab-pilot-plugin"
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
                 }
               ],
               "title": "Monitor a detached job with the watchdog"
@@ -4322,10 +4322,10 @@
           "name": "colab-watch",
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ]
         }
@@ -4352,10 +4352,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Audit Compute Unit usage and active sessions"
@@ -4371,10 +4371,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Run zero-waste GPU training on Colab"
@@ -4390,10 +4390,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Fan out CPU extraction across parallel shards"
@@ -4409,10 +4409,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Monitor a detached job with the watchdog"
@@ -4428,10 +4428,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Connect the pilot MCP server"
@@ -4447,10 +4447,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Open the Colab Pilot dashboard"
@@ -4466,10 +4466,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Allocate a BF16 GPU cascade"
@@ -4485,10 +4485,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Mount Google Drive headlessly with rclone"
@@ -4504,10 +4504,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Transfer large archives safely"
@@ -4523,10 +4523,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Launch a detached training job"
@@ -4542,10 +4542,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Poll detached job status"
@@ -4561,10 +4561,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Flush zombie VRAM after an OOM"
@@ -4580,10 +4580,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Register a keep-warm lease"
@@ -4599,10 +4599,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Stop all active Colab VMs"
@@ -4618,10 +4618,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Run wakeup alarm self-test"
@@ -4637,10 +4637,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Report active Colab sessions at startup"
@@ -4656,10 +4656,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Block TTY-hanging or unsafe colab command-line calls"
@@ -4675,10 +4675,10 @@
           ],
           "sources": [
             {
-              "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+              "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
               "locator": "",
               "path": "docs/reference.md",
-              "repo": "swack-tools/colab-pilot-plugin"
+              "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Prevent orphaned Compute Unit burn on turn end"
@@ -4692,19 +4692,19 @@
           "format": "markdown",
           "links": {},
           "source": {
-            "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+            "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
             "locator": "",
             "path": "docs/index.md",
-            "repo": "swack-tools/colab-pilot-plugin"
+            "repo": "swack-tools/colab-pilot-ai-plugin"
           },
           "text": "Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex. Stage large datasets to Google Drive at zero Compute Unit cost, provision BF16 GPU cascades, launch detached jobs resilient to WebSocket drops, and guard against orphaned sessions.\n\nRead the [full documentation and workflow guide](https://colab.ai.swacktech.com/) for setup walkthroughs, architecture details, and tool specifications."
         }
       ],
       "pending_releases": [],
       "release": null,
-      "repo": "swack-tools/colab-pilot-plugin",
-      "source_commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
-      "source_version": "1.2.0",
+      "repo": "swack-tools/colab-pilot-ai-plugin",
+      "source_commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
+      "source_version": "1.3.0",
       "summary": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
       "usage": [
         {
@@ -4712,15 +4712,15 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                 "locator": "",
                 "path": "docs/usage.md",
-                "repo": "swack-tools/colab-pilot-plugin"
+                "repo": "swack-tools/colab-pilot-ai-plugin"
               },
-              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
+              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-ai-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
             }
           ],
-          "notes": "Install with agy plugin install https://github.com/swack-tools/colab-pilot-plugin and invoke /colab-pilot, /colab-train, /colab-shard-cpu, or /colab-watch.",
+          "notes": "Install with agy plugin install https://github.com/swack-tools/colab-pilot-ai-plugin and invoke /colab-pilot, /colab-train, /colab-shard-cpu, or /colab-watch.",
           "platform": "antigravity",
           "status": "documented"
         },
@@ -4729,12 +4729,12 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                 "locator": "",
                 "path": "docs/usage.md",
-                "repo": "swack-tools/colab-pilot-plugin"
+                "repo": "swack-tools/colab-pilot-ai-plugin"
               },
-              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
+              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-ai-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
             }
           ],
           "notes": "Install from swack-tools/ai-plugin-marketplace and invoke /colab-pilot:colab-pilot or ask Claude to orchestrate Colab.",
@@ -4746,12 +4746,12 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "bb364e3774124ee7d55a585785d78c4e52faea99",
+                "commit": "66a94712039d51103c40eb9f5b9fbb18ca12acf1",
                 "locator": "",
                 "path": "docs/usage.md",
-                "repo": "swack-tools/colab-pilot-plugin"
+                "repo": "swack-tools/colab-pilot-ai-plugin"
               },
-              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
+              "text": "- **Antigravity**: Install with `agy plugin install https://github.com/swack-tools/colab-pilot-ai-plugin` and invoke `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, or `/colab-watch`.\n- **Claude Code**: Add `swack-tools/ai-plugin-marketplace` and install `colab-pilot@swack-tools-community`. Invoke `/colab-pilot:colab-pilot` or ask Claude to manage your Colab run.\n- **Codex**: Add `https://github.com/swack-tools/ai-plugin-marketplace.git` and install `colab-pilot@swack-tools-community`. Invoke `$colab-pilot` or `$colab-train` in chat.\n\nSee the [installation and client setup guide](https://colab.ai.swacktech.com/install.html) for detailed walkthroughs and headless Google Drive configuration."
             }
           ],
           "notes": "Install from https://github.com/swack-tools/ai-plugin-marketplace.git and invoke $colab-pilot or $colab-train.",

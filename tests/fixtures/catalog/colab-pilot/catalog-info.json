@@ -346,7 +346,7 @@
   "platforms": {
     "antigravity": {
       "status": "documented",
-      "notes": "Install with agy plugin install https://github.com/swack-tools/colab-pilot-plugin and invoke /colab-pilot, /colab-train, /colab-shard-cpu, or /colab-watch.",
+      "notes": "Install with agy plugin install https://github.com/swack-tools/colab-pilot-ai-plugin and invoke /colab-pilot, /colab-train, /colab-shard-cpu, or /colab-watch.",
       "sources": [
         {
           "path": "docs/usage.md",

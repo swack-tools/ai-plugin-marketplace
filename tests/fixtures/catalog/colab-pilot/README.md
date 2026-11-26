@@ -9,7 +9,7 @@ Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex: G
 From a GitHub release archive:
 
 ```sh
-gh release download v1.2.0 --repo swack-tools/colab-pilot-plugin --pattern 'colab-pilot-*.zip' --dir /tmp/colab-pilot-release
+gh release download v1.3.0 --repo swack-tools/colab-pilot-ai-plugin --pattern 'colab-pilot-*.zip' --dir /tmp/colab-pilot-release
 unzip -q /tmp/colab-pilot-release/colab-pilot-*.zip -d /tmp/colab-pilot-release/colab-pilot
 agy plugin install /tmp/colab-pilot-release/colab-pilot
 agy plugin enable colab-pilot

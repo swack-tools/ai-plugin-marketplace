@@ -29,7 +29,7 @@ def check_site(output,catalog):
             value=tag.get('href',tag.get('src'));parts=urlsplit(value)
             if parts.scheme:
                 if parts.scheme not in ('https','http'):errors.append(f'Unsafe URL: {relative}')
-                if re.search(r'github.com/swack-tools/(vale-ai-plugin|trakt-ai-plugin|token-max-ai-plugin|colab-pilot-plugin)/(blob|tree)/',value) and not re.search(r'/(blob|tree)/[0-9a-f]{40}(?:/|$)',value):errors.append(f'Unpinned source: {relative}')
+                if re.search(r'github.com/swack-tools/(vale-ai-plugin|trakt-ai-plugin|token-max-ai-plugin|colab-pilot-ai-plugin)/(blob|tree)/',value) and not re.search(r'/(blob|tree)/[0-9a-f]{40}(?:/|$)',value):errors.append(f'Unpinned source: {relative}')
                 continue
             if value.startswith('/') or '\\' in value:errors.append(f'Nonrelative site URL: {relative}');continue
             target=(path.parent/unquote(parts.path)).resolve() if parts.path else path.resolve()

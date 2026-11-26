@@ -50,7 +50,7 @@
       "name": "colab-pilot",
       "source": {
         "source": "git-subdir",
-        "url": "https://github.com/swack-tools/colab-pilot-plugin.git",
+        "url": "https://github.com/swack-tools/colab-pilot-ai-plugin.git",
         "path": "plugins/colab-pilot",
         "ref": "main"
       },

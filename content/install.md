@@ -44,7 +44,7 @@ Restart or start a new Codex chat after installation. Codex Desktop and command-
 Install **Colab Pilot** directly in Antigravity:
 
 ```sh
-agy plugin install https://github.com/swack-tools/colab-pilot-plugin
+agy plugin install https://github.com/swack-tools/colab-pilot-ai-plugin
 ```
 
 ## Upload a plugin archive

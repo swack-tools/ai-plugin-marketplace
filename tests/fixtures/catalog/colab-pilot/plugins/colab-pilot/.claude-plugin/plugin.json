@@ -1,6 +1,6 @@
 {
   "name": "colab-pilot",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "displayName": "Colab Pilot",
   "description": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
   "author": {
@@ -8,7 +8,7 @@
     "url": "https://github.com/swack-tools"
   },
   "homepage": "https://colab.ai.swacktech.com/",
-  "repository": "https://github.com/swack-tools/colab-pilot-plugin",
+  "repository": "https://github.com/swack-tools/colab-pilot-ai-plugin",
   "license": "Apache-2.0",
   "keywords": [
     "colab",
