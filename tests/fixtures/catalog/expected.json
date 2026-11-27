@@ -1,5 +1,5 @@
 {
-  "marketplace_commit": "655ecf9edc748be9ece516991bfa126bcae1be60",
+  "marketplace_commit": "1299cf3aa67bd1b0b0e80baf5f10c42df16f4d8a",
   "projects": [
     {
       "accent": "#086b68",
@@ -3547,7 +3547,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3561,13 +3561,13 @@
           "name": "PreToolUse",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "/hooks/PreToolUse/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3599,7 +3599,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3613,13 +3613,13 @@
           "name": "SessionStart",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "/hooks/SessionStart/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3651,7 +3651,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3665,13 +3665,13 @@
           "name": "Stop",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "/hooks/Stop/0/hooks/0",
               "path": "plugins/colab-pilot/hooks/hooks.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3683,7 +3683,7 @@
             "claude",
             "codex"
           ],
-          "description": "Local stdio MCP server providing 10 Colab orchestration tools and an interactive dashboard.",
+          "description": "Local stdio MCP server providing 11 Colab orchestration tools and an interactive dashboard.",
           "details": {
             "endpoint": null,
             "transport": "stdio"
@@ -3691,7 +3691,7 @@
           "examples": [
             {
               "evidence": "documented",
-              "expected_behavior": "Start the local stdio pilot MCP server and expose all 10 Colab orchestration tools.",
+              "expected_behavior": "Start the local stdio pilot MCP server and expose all 11 Colab orchestration tools.",
               "id": "mcp-server-pilot",
               "input_or_trigger": "Open the Colab Pilot dashboard and inspect active sessions.",
               "platform": "claude-code",
@@ -3700,7 +3700,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3714,13 +3714,13 @@
           "name": "pilot",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/.mcp.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
             },
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3732,7 +3732,7 @@
             "claude",
             "codex"
           ],
-          "description": "Try GPU tiers in priority order, verify BF16 support, probe VRAM, system RAM, and NVENC availability, and return safe DataLoader and crop sizing.",
+          "description": "Try GPU tiers in priority order (supporting prefer_gpus, high_mem, and configurable per-tier timeouts), verify BF16 support, probe VRAM, system RAM, and NVENC availability, and return safe DataLoader and crop sizing.",
           "details": {
             "server_id": "pilot",
             "title": "Allocate GPU cascade"
@@ -3749,7 +3749,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3763,7 +3763,7 @@
           "name": "colab_allocate_cascade",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3775,7 +3775,7 @@
             "claude",
             "codex"
           ],
-          "description": "Open the interactive Colab Pilot dashboard showing Compute Unit balance, burn rate, monthly budget guardrail, active sessions, detached jobs, and alarm controls.",
+          "description": "Open the interactive Colab Pilot dashboard showing Compute Unit balance, burn rate, monthly budget guardrail, active sessions with live GPU, VRAM, system RAM, disk, and CPU telemetry, detached jobs, and alarm controls.",
           "details": {
             "server_id": "pilot",
             "title": "Open Colab Pilot dashboard"
@@ -3792,7 +3792,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3806,7 +3806,50 @@
           "name": "colab_dashboard",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
+              "locator": "",
+              "path": "api/colab-pilot/tools.json",
+              "repo": "swack-tools/colab-pilot-ai-plugin"
+            }
+          ]
+        },
+        {
+          "clients": [
+            "claude",
+            "codex"
+          ],
+          "description": "Run a bounded one-shot shell command or Python snippet on a Colab VM (auto-routing over SSH when the kernel is busy) with optional safe PID cleanup and file glob removal.",
+          "details": {
+            "server_id": "pilot",
+            "title": "Run bounded remote command"
+          },
+          "examples": [
+            {
+              "evidence": "documented",
+              "expected_behavior": "Execute a bounded shell command or Python snippet (routing over SSH when the kernel is busy) without TTY hangs.",
+              "id": "tool-colab-exec",
+              "input_or_trigger": "Run a quick package check or clean up stale processes on session train-v10.",
+              "platform": "claude-code",
+              "prerequisites": [
+                "Have an active Colab session."
+              ],
+              "sources": [
+                {
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
+                  "locator": "",
+                  "path": "docs/reference.md",
+                  "repo": "swack-tools/colab-pilot-ai-plugin"
+                }
+              ],
+              "title": "Run a bounded one-shot remote command"
+            }
+          ],
+          "id": "mcp_tool:colab_exec",
+          "kind": "mcp_tool",
+          "name": "colab_exec",
+          "sources": [
+            {
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3835,7 +3878,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3849,7 +3892,7 @@
           "name": "colab_keep_warm",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3861,7 +3904,7 @@
             "claude",
             "codex"
           ],
-          "description": "Launch a Python script detached with nohup on a Colab VM with carriage-return log normalization and 10-second GPU heartbeat status.",
+          "description": "Launch a local or already-staged remote Python script detached with nohup, cwd and custom log mirroring, warm-chain process cleanup, carriage-return log normalization, and 10-second GPU heartbeat status.",
           "details": {
             "server_id": "pilot",
             "title": "Launch detached job"
@@ -3878,7 +3921,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3892,7 +3935,7 @@
           "name": "colab_launch_detached",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3921,7 +3964,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3935,7 +3978,7 @@
           "name": "colab_mount_rclone",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3947,7 +3990,7 @@
             "claude",
             "codex"
           ],
-          "description": "Poll a detached Colab job over the REST Contents API to read status JSON and log tails without holding a WebSocket open.",
+          "description": "Poll a detached Colab job, background Drive transfer, or ad-hoc process, log path, and artifacts directory with live GPU, VRAM, RAM, and disk telemetry.",
           "details": {
             "server_id": "pilot",
             "title": "Poll detached job"
@@ -3964,7 +4007,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -3978,7 +4021,7 @@
           "name": "colab_poll_job",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4007,7 +4050,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4021,7 +4064,7 @@
           "name": "colab_reset_vram",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4033,7 +4076,7 @@
             "claude",
             "codex"
           ],
-          "description": "Transfer files between your workstation and Colab without Jupyter API 500 errors using direct upload for small files and Drive staging or chunking for large archives.",
+          "description": "Transfer single or batch files between workstation, Google Drive, and Colab VMs with auto-mkdir direct upload, async Drive staging, remote_glob downloads, and headless drive_pull archive extraction.",
           "details": {
             "server_id": "pilot",
             "title": "Transfer files safely"
@@ -4050,7 +4093,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4064,7 +4107,7 @@
           "name": "colab_smart_transfer",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4093,7 +4136,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4107,7 +4150,7 @@
           "name": "colab_stop_all",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4136,7 +4179,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "docs/reference.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4150,7 +4193,7 @@
           "name": "colab_wakeup_alarm",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "api/colab-pilot/tools.json",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4179,7 +4222,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4193,7 +4236,7 @@
           "name": "colab-pilot",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4222,7 +4265,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4236,7 +4279,7 @@
           "name": "colab-shard-cpu",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4265,7 +4308,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4279,7 +4322,7 @@
           "name": "colab-train",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4308,7 +4351,7 @@
               ],
               "sources": [
                 {
-                  "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                  "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                   "locator": "",
                   "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
                   "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4322,7 +4365,7 @@
           "name": "colab-watch",
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4335,7 +4378,7 @@
         "hook_actions": 3,
         "hook_events": 3,
         "mcp_servers": 1,
-        "mcp_tools": 10,
+        "mcp_tools": 11,
         "skills": 4,
         "standalone_commands": 0
       },
@@ -4352,7 +4395,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-pilot/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4371,7 +4414,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-train/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4390,7 +4433,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-shard-cpu/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4409,7 +4452,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "plugins/colab-pilot/skills/colab-watch/SKILL.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4419,7 +4462,7 @@
         },
         {
           "evidence": "documented",
-          "expected_behavior": "Start the local stdio pilot MCP server and expose all 10 Colab orchestration tools.",
+          "expected_behavior": "Start the local stdio pilot MCP server and expose all 11 Colab orchestration tools.",
           "id": "mcp-server-pilot",
           "input_or_trigger": "Open the Colab Pilot dashboard and inspect active sessions.",
           "platform": "claude-code",
@@ -4428,7 +4471,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4447,7 +4490,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4466,7 +4509,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4485,7 +4528,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4504,7 +4547,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4523,7 +4566,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4542,13 +4585,32 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
             }
           ],
           "title": "Poll detached job status"
+        },
+        {
+          "evidence": "documented",
+          "expected_behavior": "Execute a bounded shell command or Python snippet (routing over SSH when the kernel is busy) without TTY hangs.",
+          "id": "tool-colab-exec",
+          "input_or_trigger": "Run a quick package check or clean up stale processes on session train-v10.",
+          "platform": "claude-code",
+          "prerequisites": [
+            "Have an active Colab session."
+          ],
+          "sources": [
+            {
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
+              "locator": "",
+              "path": "docs/reference.md",
+              "repo": "swack-tools/colab-pilot-ai-plugin"
+            }
+          ],
+          "title": "Run a bounded one-shot remote command"
         },
         {
           "evidence": "documented",
@@ -4561,7 +4623,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4580,7 +4642,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4599,7 +4661,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4618,7 +4680,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4637,7 +4699,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4656,7 +4718,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4675,7 +4737,7 @@
           ],
           "sources": [
             {
-              "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+              "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
               "locator": "",
               "path": "docs/reference.md",
               "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4692,7 +4754,7 @@
           "format": "markdown",
           "links": {},
           "source": {
-            "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+            "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
             "locator": "",
             "path": "docs/index.md",
             "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4703,8 +4765,8 @@
       "pending_releases": [],
       "release": null,
       "repo": "swack-tools/colab-pilot-ai-plugin",
-      "source_commit": "975fe48a02e286c777d9b115d71803852edb67d7",
-      "source_version": "1.3.2",
+      "source_commit": "fc027d6841956c796b6c1946169a8b270776a4df",
+      "source_version": "1.4.0",
       "summary": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
       "usage": [
         {
@@ -4712,7 +4774,7 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                 "locator": "",
                 "path": "docs/usage.md",
                 "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4729,7 +4791,7 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                 "locator": "",
                 "path": "docs/usage.md",
                 "repo": "swack-tools/colab-pilot-ai-plugin"
@@ -4746,7 +4808,7 @@
             {
               "format": "markdown",
               "source": {
-                "commit": "975fe48a02e286c777d9b115d71803852edb67d7",
+                "commit": "fc027d6841956c796b6c1946169a8b270776a4df",
                 "locator": "",
                 "path": "docs/usage.md",
                 "repo": "swack-tools/colab-pilot-ai-plugin"

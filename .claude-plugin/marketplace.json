@@ -5,7 +5,7 @@
     "url": "https://github.com/swack-tools"
   },
   "metadata": {
-    "version": "1.3.2",
+    "version": "1.4.0",
     "description": "Claude, Codex, and Antigravity plugins from Swack Tools."
   },
   "plugins": [

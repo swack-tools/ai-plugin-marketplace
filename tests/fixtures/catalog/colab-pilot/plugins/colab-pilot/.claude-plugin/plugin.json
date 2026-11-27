@@ -1,6 +1,6 @@
 {
   "name": "colab-pilot",
-  "version": "1.3.2",
+  "version": "1.4.0",
   "displayName": "Colab Pilot",
   "description": "Zero-waste Google Colab orchestration with GPU cascade provisioning, Drive staging, detached jobs, and Compute Unit leak hooks.",
   "author": {

@@ -4,7 +4,7 @@
       "command": "sh",
       "args": [
         "-c",
-        "exec python3 -B \"${CLAUDE_PLUGIN_ROOT:-${PLUGIN_ROOT:-.}}/scripts/colab_mcp_server.py\""
+        "R=\"${CLAUDE_PLUGIN_ROOT}\"; [ -n \"$R\" ] || R=\"${PLUGIN_ROOT}\"; [ -n \"$R\" ] || R=\".\"; exec python3 -B \"$R/scripts/colab_mcp_server.py\""
       ]
     }
   }

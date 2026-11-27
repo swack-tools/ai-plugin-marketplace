@@ -11,7 +11,7 @@ description: >-
 Monitor long-running Colab training or extraction jobs without polling in a loop or losing visibility on WebSocket drops.
 
 ## 1. Remote Detached Job Watchdog (Recommended)
-Run `scripts/colab_watchdog.py` as a background `run_command` task so Antigravity wakes you up automatically when it exits:
+For one-off status checks, call `colab_poll_job(session="<session-name>", job_id="<job-id>")` or ad-hoc `colab_poll_job(session="<session-name>", log_path="/content/out/train.log", process_pattern="train.py", artifacts_dir="/content/out")`. For unattended waiting, run `scripts/colab_watchdog.py` as a background `run_command` task so Antigravity wakes you up automatically when it exits:
 ```bash
 python3 -B ~/.gemini/config/plugins/colab-pilot/scripts/colab_watchdog.py \
   --session <session-name> \

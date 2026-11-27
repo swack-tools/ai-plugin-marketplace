@@ -97,7 +97,7 @@
       "prerequisites": [
         "Install Colab Pilot with Python 3.9 or later and the colab command-line tool."
       ],
-      "expected_behavior": "Start the local stdio pilot MCP server and expose all 10 Colab orchestration tools.",
+      "expected_behavior": "Start the local stdio pilot MCP server and expose all 11 Colab orchestration tools.",
       "sources": [
         {
           "path": "docs/reference.md",
@@ -206,6 +206,24 @@
       "platform": "codex",
       "prerequisites": ["Start a job with colab_launch_detached."],
       "expected_behavior": "Download status JSON and recent log lines via REST without holding a WebSocket open.",
+      "sources": [
+        {
+          "path": "docs/reference.md",
+          "format": "markdown",
+          "mode": "section",
+          "heading_path": ["MCP tools"]
+        }
+      ],
+      "evidence": "documented"
+    },
+    {
+      "id": "tool-colab-exec",
+      "capability_refs": ["mcp_tool:colab_exec"],
+      "title": "Run a bounded one-shot remote command",
+      "input_or_trigger": "Run a quick package check or clean up stale processes on session train-v10.",
+      "platform": "claude-code",
+      "prerequisites": ["Have an active Colab session."],
+      "expected_behavior": "Execute a bounded shell command or Python snippet (routing over SSH when the kernel is busy) without TTY hangs.",
       "sources": [
         {
           "path": "docs/reference.md",
@@ -388,7 +406,7 @@
   },
   "mcpServers": {
     "pilot": {
-      "description": "Local stdio MCP server providing 10 Colab orchestration tools and an interactive dashboard.",
+      "description": "Local stdio MCP server providing 11 Colab orchestration tools and an interactive dashboard.",
       "sources": [
         {
           "path": "docs/reference.md",

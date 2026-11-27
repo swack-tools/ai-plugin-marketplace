@@ -14,8 +14,11 @@ Use this skill to inspect live Google Colab Compute Unit (CU) usage, open the in
 ## Quick Actions
 
 1. **Open Interactive Dashboard (`colab_dashboard`)**:
-   - Call MCP tool `colab_dashboard` (optionally passing `ultra_monthly_cu` and `budget_fraction`, default `25000` and `0.20` for the 1/5th monthly guardrail).
-   - The UI renders in the conversation or side pane (`Colab Pilot`) with live CU balance, burn rate, session cards, detached jobs, and one-click **Flush Zombie VRAM**, **Keep Warm 30m**, **Stop VM**, and **Alarm** controls.
+   - Call MCP tool `colab_dashboard` (optionally passing `ultra_monthly_cu` and `budget_fraction`, default `25000` and `0.20` for the one-fifth monthly guardrail).
+   - Both the interactive UI and the text response list live CU balance, burn rate, per-session hardware, GPU/VRAM/RAM/CPU telemetry, leases, and active jobs, replacing manual `colab usage && colab sessions` calls.
+
+2. **Bounded One-Shot Commands & Cleanup (`colab_exec`)**:
+   - Call `colab_exec(session="<name>", command="..." | python_code="...", cwd="...", kill_pattern="...", clean_globs=[...], timeout_seconds=60)` for quick shell/Python inspection, `pip install`, or safe PID cleanup without TTY hangs or blocking behind busy Jupyter kernels.
 
 2. **Sweep Orphaned VMs (`colab_stop_all`)**:
    - Call `colab_stop_all` (omit `session` to stop all active VMs, or pass `session` for one).

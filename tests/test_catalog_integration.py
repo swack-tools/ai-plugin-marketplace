@@ -12,7 +12,7 @@ from scripts.catalog.documents import enrich_plugin
 
 class IntegrationTests(unittest.TestCase):
     def test_all_fixtures_have_full_capability_example_coverage(self):
-        expected={'vale':(3,0,0,3),'trakt-mcp':(7,1,15,0),'token-max':(1,0,0,0),'colab-pilot':(4,1,10,3)}
+        expected={'vale':(3,0,0,3),'trakt-mcp':(7,1,15,0),'token-max':(1,0,0,0),'colab-pilot':(4,1,11,3)}
         for config in load_registry(Path('catalog/projects.json')):
             snap,release=load_snapshot(config,Path('tests/fixtures/catalog'))
             caps,_=inventory_plugin(config,snap)

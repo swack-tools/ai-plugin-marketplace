@@ -4,12 +4,12 @@
     {
       "name": "colab_dashboard",
       "title": "Open Colab Pilot dashboard",
-      "description": "Open the interactive Colab Pilot dashboard showing Compute Unit balance, burn rate, monthly budget guardrail, active sessions, detached jobs, and alarm controls."
+      "description": "Open the interactive Colab Pilot dashboard showing Compute Unit balance, burn rate, monthly budget guardrail, active sessions with live GPU, VRAM, system RAM, disk, and CPU telemetry, detached jobs, and alarm controls."
     },
     {
       "name": "colab_allocate_cascade",
       "title": "Allocate GPU cascade",
-      "description": "Try GPU tiers in priority order, verify BF16 support, probe VRAM, system RAM, and NVENC availability, and return safe DataLoader and crop sizing."
+      "description": "Try GPU tiers in priority order (supporting prefer_gpus, high_mem, and configurable per-tier timeouts), verify BF16 support, probe VRAM, system RAM, and NVENC availability, and return safe DataLoader and crop sizing."
     },
     {
       "name": "colab_mount_rclone",
@@ -19,17 +19,22 @@
     {
       "name": "colab_smart_transfer",
       "title": "Transfer files safely",
-      "description": "Transfer files between your workstation and Colab without Jupyter API 500 errors using direct upload for small files and Drive staging or chunking for large archives."
+      "description": "Transfer single or batch files between workstation, Google Drive, and Colab VMs with auto-mkdir direct upload, async Drive staging, remote_glob downloads, and headless drive_pull archive extraction."
     },
     {
       "name": "colab_launch_detached",
       "title": "Launch detached job",
-      "description": "Launch a Python script detached with nohup on a Colab VM with carriage-return log normalization and 10-second GPU heartbeat status."
+      "description": "Launch a local or already-staged remote Python script detached with nohup, cwd and custom log mirroring, warm-chain process cleanup, carriage-return log normalization, and 10-second GPU heartbeat status."
     },
     {
       "name": "colab_poll_job",
       "title": "Poll detached job",
-      "description": "Poll a detached Colab job over the REST Contents API to read status JSON and log tails without holding a WebSocket open."
+      "description": "Poll a detached Colab job, background Drive transfer, or ad-hoc process, log path, and artifacts directory with live GPU, VRAM, RAM, and disk telemetry."
+    },
+    {
+      "name": "colab_exec",
+      "title": "Run bounded remote command",
+      "description": "Run a bounded one-shot shell command or Python snippet on a Colab VM (auto-routing over SSH when the kernel is busy) with optional safe PID cleanup and file glob removal."
     },
     {
       "name": "colab_reset_vram",

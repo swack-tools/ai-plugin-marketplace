@@ -9,7 +9,7 @@ Zero-waste Google Colab orchestration for Antigravity, Claude Code, and Codex: G
 From a GitHub release archive:
 
 ```sh
-gh release download v1.3.2 --repo swack-tools/colab-pilot-ai-plugin --pattern 'colab-pilot-*.zip' --dir /tmp/colab-pilot-release
+gh release download v1.4.0 --repo swack-tools/colab-pilot-ai-plugin --pattern 'colab-pilot-*.zip' --dir /tmp/colab-pilot-release
 unzip -q /tmp/colab-pilot-release/colab-pilot-*.zip -d /tmp/colab-pilot-release/colab-pilot
 agy plugin install /tmp/colab-pilot-release/colab-pilot
 agy plugin enable colab-pilot
@@ -35,7 +35,7 @@ agy plugin install ./plugins/colab-pilot
 
 ## Components
 
-- **MCP Server (`pilot`)** — 10 tools (`colab_dashboard`, `colab_allocate_cascade`, `colab_mount_rclone`, `colab_smart_transfer`, `colab_launch_detached`, `colab_poll_job`, `colab_reset_vram`, `colab_keep_warm`, `colab_stop_all`, `colab_wakeup_alarm`) + `ui://colab-pilot/dashboard.html` MCP App UI.
+- **MCP Server (`pilot`)** — 11 tools (`colab_dashboard`, `colab_allocate_cascade`, `colab_mount_rclone`, `colab_smart_transfer`, `colab_launch_detached`, `colab_poll_job`, `colab_exec`, `colab_reset_vram`, `colab_keep_warm`, `colab_stop_all`, `colab_wakeup_alarm`) + `ui://colab-pilot/dashboard.html` MCP App UI.
 - **Custom Agent (`colab-operator`)** — Autonomous Colab SRE executing the 6-phase zero-waste protocol.
 - **Lifecycle Hooks (`hooks.json`)** — `SessionStart`, `PreToolUse` (blocks TTY hangs, invalid `--gpu` tiers, and `>30 MiB` direct `colab upload`), and `Stop` (prevents orphaned CU burn).
 - **Skills / Slash Commands** — `/colab-pilot`, `/colab-train`, `/colab-shard-cpu`, `/colab-watch`.
